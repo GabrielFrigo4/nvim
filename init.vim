@@ -1,3 +1,9 @@
+call plug#begin()
+Plug 'morthetz/gruvbox'
+call plug#end()
+colorscheme gruvbox
+set background=dark
+
 set tabstop=4
 set shiftwidth=4
 set relativenumber

@@ -11,7 +11,9 @@ set shiftwidth=4
 set relativenumber
 set mouse=a
 set inccommand=split
-"set ft=nasm
+autocmd BufNew,BufRead *.asm set ft=nasm
+autocmd BufNew,BufRead *.inc set ft=nasm
+autocmd BufNew,BufRead *.s set ft=nasm
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>

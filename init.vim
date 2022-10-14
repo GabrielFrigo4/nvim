@@ -18,10 +18,10 @@ autocmd BufNew,BufRead *.s set ft=nasm
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
 " linux
-"nnoremap <leader>sv :vsplit ~/.config/nvim/init.vim<cr>
-"nnoremap <leader>ev :source ~/.config/nvim/init.vim<cr>
+"nnoremap <leader>vi :vsplit ~/.config/nvim/init.vim<cr>
+"nnoremap <leader>si :source ~/.config/nvim/init.vim<cr>
 " windows
-nnoremap <leader>sv :vsplit ~\AppData\Local\nvim\init.vim<cr>
-nnoremap <leader>ev :source ~\AppData\Local\nvim\init.vim<cr>
+nnoremap <leader>vi :vsplit ~\AppData\Local\nvim\init.vim<cr>
+nnoremap <leader>si :source ~\AppData\Local\nvim\init.vim<cr>
 nnoremap <leader>pi :PlugInstall<cr>
 nnoremap <leader>pu :UpdateRemotePlugins<cr>

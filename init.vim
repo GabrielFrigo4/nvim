@@ -15,7 +15,11 @@ set ft=nasm
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
-nnoremap <leader>ev :vsplit ~\AppData\Local\nvim\init.vim<cr>
-nnoremap <leader>sv :source ~\AppData\Local\nvim\init.vim<cr>
+" linux
+" nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
+" nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
+" windows
+nnoremap <leader>sv :vsplit ~\AppData\Local\nvim\init.vim<cr>
+nnoremap <leader>ev :source ~\AppData\Local\nvim\init.vim<cr>
 nnoremap <leader>pi :PlugInstall<cr>
 nnoremap <leader>pu :UpdateRemotePlugins<cr>

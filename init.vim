@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'

@@ -4,7 +4,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 syntax on
-colorscheme monokai
+colorscheme monokai_soda
 
 set tabstop=4
 set shiftwidth=4

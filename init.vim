@@ -1,11 +1,10 @@
 call plug#begin()
-Plug 'cpea2506/one_monokai.nvim'
-"Plug 'tanvirtin/monokai.nvim'
+Plug 'patstockwell/vim-monokai-tasty'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 syntax on
-colorscheme one_monokai
+colorscheme vim-monokai-tasty
 
 set tabstop=4
 set shiftwidth=4

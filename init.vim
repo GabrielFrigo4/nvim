@@ -1,6 +1,5 @@
 call plug#begin()
 Plug 'cpea2506/one_monokai.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Plug 'tanvirtin/monokai.nvim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'

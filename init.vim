@@ -1,11 +1,14 @@
 call plug#begin()
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'patstockwell/vim-monokai-tasty'
+Plug 'fratajczak/one-monokai-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 syntax on
-colorscheme vim-monokai-tasty
+colorscheme one-monokai
+set termguicolors
+let g:monokai_term_italic = 1
+let g:monokai_gui_italic = 1
 
 set tabstop=4
 set shiftwidth=4
@@ -15,6 +18,34 @@ set inccommand=split
 autocmd BufNew,BufRead *.asm set ft=nasm
 autocmd BufNew,BufRead *.inc set ft=nasm
 autocmd BufNew,BufRead *.s set ft=nasm
+
+function! s:treesitter_init() abort
+  " load once
+  if exists('g:plug_treesitter_loaded')
+    return
+  endif
+  let g:plug_treesitter_loaded = 1
+
+  " initialize treesitter
+  let setup_file = g:plug_home .. '/nvim-treesitter/plugin/nvim-treesitter.lua'
+  execute 'luafile' setup_file
+
+  " setup treesitter
+lua << EOF
+  require('nvim-treesitter.configs').setup({
+    highlight = { enable = true },
+    indent = { enable = true },
+
+    -- setup modules
+    matchup = { enable = true },
+  })
+EOF
+
+  " enable treesitter
+  TSEnable highlight
+endfunction
+
+autocmd BufReadPost * ++once call <sid>treesitter_init()
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>

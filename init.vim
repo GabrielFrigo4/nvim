@@ -5,7 +5,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 syntax on
-colorscheme one-monokai
+"colorscheme one-monokai
 set termguicolors
 let g:monokai_term_italic = 1
 let g:monokai_gui_italic = 1
@@ -33,6 +33,7 @@ function! s:treesitter_init() abort
   " setup treesitter
 lua << EOF
   require('nvim-treesitter.configs').setup({
+  	ensure_installed = {"c", "cpp", "lua", "vim"}
     highlight = { enable = true },
     indent = { enable = true },
 

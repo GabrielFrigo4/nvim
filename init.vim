@@ -15,9 +15,9 @@ set shiftwidth=4
 set relativenumber
 set mouse=a
 set inccommand=split
-autocmd BufNew,BufRead *.asm set ft=nasm
-autocmd BufNew,BufRead *.inc set ft=nasm
-autocmd BufNew,BufRead *.s set ft=nasm
+autocmd BufNewFile,BufRead *.asm set ft=nasm
+autocmd BufNewFile,BufRead *.inc set ft=nasm
+autocmd BufNewFile,BufRead *.s set ft=nasm
 
 function! s:treesitter_init() abort
   " load once
@@ -46,7 +46,7 @@ EOF
   TSEnable highlight
 endfunction
 
-autocmd BufReadPost * ++once call <sid>treesitter_init()
+autocmd BufNewFile,BufRead * call <sid>treesitter_init()
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>

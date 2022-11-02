@@ -33,7 +33,7 @@ function! s:treesitter_init() abort
   " setup treesitter
 lua << EOF
   require('nvim-treesitter.configs').setup({
-  	ensure_installed = {"c", "cpp", "lua", "vim"},
+  	ensure_installed = {"c", "cpp", "lua", "vim", "python", "bash"},
     highlight = { enable = true },
     indent = { enable = true },
 

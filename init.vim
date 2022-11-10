@@ -10,11 +10,15 @@ set termguicolors
 let g:monokai_term_italic = 1
 let g:monokai_gui_italic = 1
 
+" enable mouse
+set mouse=a
+set mousemodel=popup
+" config text
 set tabstop=4
 set shiftwidth=4
 set relativenumber
-set mouse=a
 set inccommand=split
+" config file extension
 autocmd BufNewFile,BufRead *.asm set ft=nasm
 autocmd BufNewFile,BufRead *.inc set ft=nasm
 autocmd BufNewFile,BufRead *.s set ft=nasm

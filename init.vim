@@ -19,9 +19,25 @@ set shiftwidth=4
 set relativenumber
 set inccommand=split
 " config file extension
-autocmd BufNewFile,BufRead *.asm set ft=nasm
-autocmd BufNewFile,BufRead *.inc set ft=nasm
-autocmd BufNewFile,BufRead *.s set ft=nasm
+
+" windows
+if has('win32')
+  autocmd BufNewFile,BufRead *.masm set ft=masm
+  autocmd BufNewFile,BufRead *.nasm set ft=nasm
+  autocmd BufNewFile,BufRead *.arm set ft=arm
+  autocmd BufNewFile,BufRead *.asm set ft=masm
+  autocmd BufNewFile,BufRead *.inc set ft=masm
+  autocmd BufNewFile,BufRead *.s set ft=masm
+endif
+" linux
+if has('unix')
+  autocmd BufNewFile,BufRead *.masm set ft=masm
+  autocmd BufNewFile,BufRead *.nasm set ft=nasm
+  autocmd BufNewFile,BufRead *.arm set ft=arm
+  autocmd BufNewFile,BufRead *.asm set ft=nasm
+  autocmd BufNewFile,BufRead *.inc set ft=nasm
+  autocmd BufNewFile,BufRead *.s set ft=nasm
+endif
 
 function! s:treesitter_init() abort
   " load once

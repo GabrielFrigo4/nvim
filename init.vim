@@ -3,6 +3,7 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'fratajczak/one-monokai-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
+Plug 'ARM9/arm-syntax-vim'
 call plug#end()
 syntax on
 colorscheme one-monokai

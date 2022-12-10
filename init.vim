@@ -39,7 +39,11 @@ if has('win32')
   " gas
   autocmd BufNewFile,BufRead *.s set ft=asm
   autocmd BufNewFile,BufRead *.sinc set ft=asm
+  " risc-v
+  autocmd BufNewFile,BufRead *.riscv set ft=riscv
+  autocmd BufNewFile,BufRead *.rinc set ft=riscv
 endif
+
 " linux
 if has('unix')
   " masm
@@ -57,6 +61,9 @@ if has('unix')
   " gas
   autocmd BufNewFile,BufRead *.s set ft=asm
   autocmd BufNewFile,BufRead *.sinc set ft=asm
+  " risc-v
+  autocmd BufNewFile,BufRead *.riscv set ft=riscv
+  autocmd BufNewFile,BufRead *.rinc set ft=riscv
 endif
 
 function! s:treesitter_init() abort
@@ -90,15 +97,18 @@ autocmd BufNewFile,BufRead * call <sid>treesitter_init()
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
+
 " windows
 if has('win32')
   nnoremap <leader>vi :vsplit ~\AppData\Local\nvim\init.vim<cr>
   nnoremap <leader>si :source ~\AppData\Local\nvim\init.vim<cr>
 endif
+
 " linux
 if has('unix')
   nnoremap <leader>vi :vsplit ~/.config/nvim/init.vim<cr>
   nnoremap <leader>si :source ~/.config/nvim/init.vim<cr>
 endif
+
 nnoremap <leader>pi :PlugInstall<cr>
 nnoremap <leader>pu :UpdateRemotePlugins<cr>

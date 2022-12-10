@@ -40,7 +40,7 @@ if has('win32')
   autocmd BufNewFile,BufRead *.s set ft=asm
   autocmd BufNewFile,BufRead *.sinc set ft=asm
   " risc-v
-  autocmd BufNewFile,BufRead *.riscv set ft=riscv
+  autocmd BufNewFile,BufRead *.risc set ft=riscv
   autocmd BufNewFile,BufRead *.rinc set ft=riscv
 endif
 
@@ -62,7 +62,7 @@ if has('unix')
   autocmd BufNewFile,BufRead *.s set ft=asm
   autocmd BufNewFile,BufRead *.sinc set ft=asm
   " risc-v
-  autocmd BufNewFile,BufRead *.riscv set ft=riscv
+  autocmd BufNewFile,BufRead *.risc set ft=riscv
   autocmd BufNewFile,BufRead *.rinc set ft=riscv
 endif
 

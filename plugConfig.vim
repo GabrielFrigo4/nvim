@@ -13,13 +13,13 @@ let g:monokai_term_italic = 1
 let g:monokai_gui_italic = 1
 
 " enable mouse
-set mouse=a
-set mousemodel=popup
+" set mouse=a
+" set mousemodel=popup
 " config text
-set tabstop=4
-set shiftwidth=4
-set relativenumber
-set inccommand=split
+" set tabstop=4
+" set shiftwidth=4
+" set relativenumber
+" set inccommand=split
 " config file extension
 
 " windows

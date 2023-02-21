@@ -1,27 +1,4 @@
-call plug#begin()
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'fratajczak/one-monokai-vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'sheerun/vim-polyglot'
-Plug 'ARM9/arm-syntax-vim'
-Plug 'kylelaker/riscv.vim'
-call plug#end()
-syntax on
-colorscheme one-monokai
-set termguicolors
-let g:monokai_term_italic = 1
-let g:monokai_gui_italic = 1
-
-" enable mouse
-" set mouse=a
-" set mousemodel=popup
-" config text
-" set tabstop=4
-" set shiftwidth=4
-" set relativenumber
-" set inccommand=split
 " config file extension
-
 " windows
 if has('win32')
   " masm
@@ -93,22 +70,5 @@ EOF
   TSEnable highlight
 endfunction
 
+" config treesitter
 autocmd BufNewFile,BufRead * call <sid>treesitter_init()
-
-let mapleader="\<space>"
-nnoremap <leader>; A;<esc>
-
-" windows
-if has('win32')
-  nnoremap <leader>vi :vsplit ~\AppData\Local\nvim\init.vim<cr>
-  nnoremap <leader>si :source ~\AppData\Local\nvim\init.vim<cr>
-endif
-
-" linux
-if has('unix')
-  nnoremap <leader>vi :vsplit ~/.config/nvim/init.vim<cr>
-  nnoremap <leader>si :source ~/.config/nvim/init.vim<cr>
-endif
-
-nnoremap <leader>pi :PlugInstall<cr>
-nnoremap <leader>pu :UpdateRemotePlugins<cr>

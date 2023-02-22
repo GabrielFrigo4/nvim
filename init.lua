@@ -1,8 +1,8 @@
 -- Nvim var
 Nvim = {
     map = vim.api.nvim_set_keymap,
-    isWin = vim.fn.has('win32'),
-    isUnix = vim.fn.has('unix'),
+    isWin = vim.fn.has('win32') == 1,
+    isUnix = vim.fn.has('unix') == 1,
     path = {
         lib = vim.api.nvim_list_runtime_paths()[3],
         appData = vim.api.nvim_list_runtime_paths()[1],

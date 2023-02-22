@@ -15,4 +15,4 @@ vim.opt.inccommand = 'split'
 Nvim.callVimFile('nvim_autocmd', true)
 
 -- nnoremap
-Nvim.callVimFile('nvim_autocmd', true)
+Nvim.callVimFile('nvim_nnoremap', true)

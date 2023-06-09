@@ -1,6 +1,11 @@
 -- Nvim var
 Nvim = {
-    map = vim.api.nvim_set_keymap,
+    grab = vim.g,
+    api = vim.api,
+    option = vim.opt,
+    keymap = vim.api.nvim_set_keymap,
+    augroup = vim.api.nvim_create_augroup,
+    autocmd = vim.api.nvim_create_autocmd,
     isWin = vim.fn.has('win32') == 1,
     isUnix = vim.fn.has('unix') == 1,
     path = {

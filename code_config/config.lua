@@ -2,17 +2,18 @@
 Nvim.callVimFile('nvim_plug', true)
 
 -- enable mouse
-vim.opt.mouse = 'a'
-vim.opt.mousemodel = 'popup'
+Nvim.option.mouse = 'a'
+Nvim.option.mousemodel = 'popup'
 
 -- config text
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.relativenumber = true
-vim.opt.inccommand = 'split'
+Nvim.option.tabstop = 4
+Nvim.option.shiftwidth = 4
+Nvim.option.relativenumber = true
+Nvim.option.inccommand = 'split'
 
 -- autocmd
+Nvim.callLuaFile('nvim_autocmd', true)
 Nvim.callVimFile('nvim_autocmd', true)
 
 -- nnoremap
-Nvim.callVimFile('nvim_nnoremap', true)
+Nvim.callLuaFile('nvim_nnoremap', true)

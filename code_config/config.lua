@@ -1,4 +1,5 @@
 -- plug
+Nvim.callLuaFile('nvim_plug', true)
 Nvim.callVimFile('nvim_plug', true)
 
 -- enable mouse

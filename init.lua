@@ -1,13 +1,13 @@
 -- Nvim var
 Nvim = {
-    grab = vim.g,
+    -- table variables
     api = vim.api,
+    global = vim.g,
     option = vim.opt,
     keymap = vim.api.nvim_set_keymap,
     augroup = vim.api.nvim_create_augroup,
     autocmd = vim.api.nvim_create_autocmd,
-    isWin = vim.fn.has('win32') == 1,
-    isUnix = vim.fn.has('unix') == 1,
+    plug = vim.fn['plug#'],
     path = {
         lib = vim.api.nvim_list_runtime_paths()[3],
         appData = vim.api.nvim_list_runtime_paths()[1],
@@ -22,6 +22,13 @@ Nvim = {
             return strPath
         end
     },
+
+    -- check bool variables
+    isWin = vim.fn.has('win32') == 1,
+    isUnix = vim.fn.has('unix') == 1,
+
+    -- functions
+    call = vim.call,
     callLuaFile = function(filePath, isLuaDir)
         local _path = nil
         if isLuaDir then

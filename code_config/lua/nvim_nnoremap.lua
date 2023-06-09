@@ -1,5 +1,5 @@
-Nvim.grab.mapleader = ' '
-Nvim.grab.maplocalleader = Nvim.grab.mapleader
+Nvim.global.mapleader = ' '
+Nvim.global.maplocalleader = Nvim.global.mapleader
 
 local function rmap(shortcut, command)
     Nvim.keymap('', shortcut, command, { noremap = true, silent = true })

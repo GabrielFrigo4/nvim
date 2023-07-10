@@ -1,19 +1,18 @@
 -- Nvim var
 Nvim = {
-    -- table variables
+    -- nvim table variables
     api = vim.api,
     global = vim.g,
     option = vim.opt,
     keymap = vim.api.nvim_set_keymap,
     augroup = vim.api.nvim_create_augroup,
     autocmd = vim.api.nvim_create_autocmd,
-    plug = vim.fn['plug#'],
     path = {
         lib = vim.api.nvim_list_runtime_paths()[3],
         appData = vim.api.nvim_list_runtime_paths()[1],
         shareRuntime = vim.api.nvim_list_runtime_paths()[2],
         binRuntime = vim.api.nvim_list_runtime_paths()[4],
-        winOrUnix = function (strPath)
+        winOrUnix = function(strPath)
             if Nvim.isWin then
                 strPath = strPath:gsub("/", "\\")
             elseif Nvim.isUnix then
@@ -21,6 +20,17 @@ Nvim = {
             end
             return strPath
         end
+    },
+
+    -- plug table variables
+    plug = {
+        get = vim.fn['plug#'],
+        init = function()
+            Nvim.call('plug#begin')
+        end,
+        close = function()
+            Nvim.call('plug#end')
+        end,
     },
 
     -- check bool variables
@@ -32,20 +42,20 @@ Nvim = {
     callLuaFile = function(filePath, isLuaDir)
         local _path = nil
         if isLuaDir then
-            _path = Nvim.path.appData..'\\code_config\\lua\\'..filePath..'.lua'
+            _path = Nvim.path.appData .. '\\code_config\\lua\\' .. filePath .. '.lua'
         else
-            _path = Nvim.path.appData..'\\code_config\\'..filePath..'.lua'
+            _path = Nvim.path.appData .. '\\code_config\\' .. filePath .. '.lua'
         end
         return dofile(Nvim.path.winOrUnix(_path))
     end,
     callVimFile = function(filePath, isVimDir)
         local _path = nil
         if isVimDir then
-            _path = Nvim.path.appData..'\\code_config\\vim\\'..filePath..'.vim'
+            _path = Nvim.path.appData .. '\\code_config\\vim\\' .. filePath .. '.vim'
         else
-            _path = Nvim.path.appData..'\\code_config\\'..filePath..'.vim'
+            _path = Nvim.path.appData .. '\\code_config\\' .. filePath .. '.vim'
         end
-        vim.cmd('source '..Nvim.path.winOrUnix(_path))
+        vim.cmd('source ' .. Nvim.path.winOrUnix(_path))
     end
 }
 

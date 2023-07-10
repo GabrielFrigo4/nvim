@@ -14,7 +14,7 @@ Nvim.option.inccommand = 'split'
 
 -- autocmd
 Nvim.callLuaFile('nvim_autocmd', true)
-Nvim.callVimFile('nvim_autocmd', true)
+--Nvim.callVimFile('nvim_autocmd', true)
 
 -- nnoremap
 Nvim.callLuaFile('nvim_nnoremap', true)

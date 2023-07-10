@@ -6,6 +6,16 @@ local function setExtCmd(extension, command)
     })
 end
 
+local treesitter = require('nvim-treesitter.configs')
+treesitter.setup({
+	ensure_installed = {"c", "cpp", "lua", "vim", "python", "bash"},
+	highlight = { enable = true },
+	indent = { enable = true },
+
+	-- setup modules
+	matchup = { enable = true },
+})
+
 -- MASM
 setExtCmd({'*.masm', '*.minc'}, 'set ft=masm')
 -- NASM

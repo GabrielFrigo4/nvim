@@ -1,6 +1,6 @@
 -- plug
-Nvim.callLuaFile('nvim_plug', true)
-Nvim.callVimFile('nvim_plug', true)
+Nvim.call.luaFile('nvim_plug', true)
+Nvim.call.vimFile('nvim_plug', true)
 
 -- enable mouse
 Nvim.option.mouse = 'a'
@@ -13,7 +13,7 @@ Nvim.option.relativenumber = true
 Nvim.option.inccommand = 'split'
 
 -- autocmd
-Nvim.callLuaFile('nvim_autocmd', true)
+Nvim.call.luaFile('nvim_autocmd', true)
 
 -- nnoremap
-Nvim.callLuaFile('nvim_nnoremap', true)
+Nvim.call.luaFile('nvim_nnoremap', true)

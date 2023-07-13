@@ -1,2 +1,2 @@
 syntax on
-colorscheme one-monokai
+colorscheme tokyonight-night

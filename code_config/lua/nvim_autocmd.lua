@@ -8,7 +8,8 @@ end
 
 local treesitter = require('nvim-treesitter.configs')
 treesitter.setup({
-	ensure_installed = {"c", "cpp", "lua", "vim", "python", "bash"},
+	ensure_installed = {"c", "cpp", "cs", "lua", 
+        "rust", "java", "vim", "python", "bash"},
 	highlight = { enable = true },
 	indent = { enable = true },
 

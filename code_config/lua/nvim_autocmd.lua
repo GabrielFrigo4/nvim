@@ -6,6 +6,13 @@ local function setExtCmd(extension, command)
     })
 end
 
+local function setListExtCmd(list)
+    for i = 1, #list, 1 do
+        local extCmd = list[i]
+        setExtCmd(extCmd[1], extCmd[2])
+    end
+end
+
 local treesitter = require('nvim-treesitter.configs')
 treesitter.setup({
     ensure_installed = {
@@ -23,16 +30,26 @@ treesitter.setup({
     matchup = { enable = true },
 })
 
--- MASM
-setExtCmd({ '*.masm', '*.minc' }, 'set ft=masm')
--- NASM
-setExtCmd({ '*.nasm', '*.ninc' }, 'set ft=nasm')
--- ARM
-setExtCmd({ '*.arm', '*.ainc' }, 'set ft=arm')
--- GAS
-setExtCmd({ '*.s', '*.sinc' }, 'set ft=asm')
--- RISC-V
-setExtCmd({ '*.riscv', '*.rinc' }, 'set ft=riscv')
+-- INTEL X86 SINTAX
+local x86 = {
+    { { '*.masm', '*.minc' }, 'set ft=masm' }, -- MASM
+    { { '*.nasm', '*.ninc' }, 'set ft=nasm' }, -- NASM
+    { { '*.s', '*.sinc' },    'set ft=asm' },  -- GAS
+    { { '*.S', '*.Sinc' },    'set ft=asm' }   -- GAS
+}
+setListExtCmd(x86)
+
+-- ARM SINTAX
+local arm = {
+    { { '*.arm', '*.ainc' }, 'set ft=arm' }
+}
+setListExtCmd(arm)
+
+-- RISC-V SINTAX
+local riscv = {
+    { { '*.asm', '*.inc' }, 'set ft=masm' }
+}
+setListExtCmd(riscv)
 
 -- Windows
 if Nvim.isWin then

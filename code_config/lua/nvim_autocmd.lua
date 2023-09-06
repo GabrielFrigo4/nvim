@@ -48,7 +48,7 @@ setListExtCmd(arm)
 
 -- RISC-V SINTAX
 local riscv = {
-    { { '*.asm', '*.inc' }, 'set ft=masm' }
+    { { '*.riscv', '*.rinc' }, 'set ft=riscv' }
 }
 setListExtCmd(riscv)
 

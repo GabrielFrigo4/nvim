@@ -34,6 +34,7 @@ treesitter.setup({
 local x86 = {
     { { '*.masm', '*.minc' }, 'set ft=masm' }, -- MASM
     { { '*.nasm', '*.ninc' }, 'set ft=nasm' }, -- NASM
+    { { '*.fasm', '*.finc' }, 'set ft=fasm' }, -- FASM
     { { '*.s', '*.sinc' },    'set ft=asm' },  -- GAS
     { { '*.S', '*.Sinc' },    'set ft=asm' }   -- GAS
 }

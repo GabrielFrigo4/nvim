@@ -1,2 +1,2 @@
 syntax on
-colorscheme tokyonight-night
+colorscheme nightfly

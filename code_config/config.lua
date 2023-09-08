@@ -1,3 +1,6 @@
+-- nnoremap
+Nvim.call.luaFile('nvim_nnoremap', true)
+
 -- plug
 Nvim.call.luaFile('nvim_plug', true)
 Nvim.call.vimFile('nvim_plug', true)
@@ -14,6 +17,3 @@ Nvim.option.inccommand = 'split'
 
 -- autocmd
 Nvim.call.luaFile('nvim_autocmd', true)
-
--- nnoremap
-Nvim.call.luaFile('nvim_nnoremap', true)

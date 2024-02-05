@@ -33,6 +33,7 @@ treesitter.setup({
 
 -- INTEL X86 SINTAX
 local x86 = {
+    { { '*.x86', '*.xinc' },    'set ft=asm' } -- GAS
     { { '*.masm', '*.minc' }, 'set ft=masm' }, -- MASM
     { { '*.nasm', '*.ninc' }, 'set ft=nasm' }, -- NASM
     { { '*.fasm', '*.finc' }, 'set ft=fasm' }, -- FASM

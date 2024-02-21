@@ -10,7 +10,7 @@ Nvim.option.mouse = 'a'
 Nvim.option.mousemodel = 'popup'
 
 -- enable clipboard
-Nvim.option.clipboard = 'unnamedplus'
+Nvim.option.clipboard:append('unnamed', 'unnamedplus')
 
 -- config text
 Nvim.option.tabstop = 4

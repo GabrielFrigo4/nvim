@@ -9,6 +9,9 @@ Nvim.call.vimFile('nvim_plug', true)
 Nvim.option.mouse = 'a'
 Nvim.option.mousemodel = 'popup'
 
+-- enable clipboard
+table.insert(Nvim.option.clipboard, 'unnamedplus')
+
 -- config text
 Nvim.option.tabstop = 4
 Nvim.option.shiftwidth = 4

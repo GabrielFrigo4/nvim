@@ -6,4 +6,5 @@ local function rmap(shortcut, command)
 end
 
 rmap('<leader>pi', ':PlugInstall<cr>')
-rmap('<leader>pu', ':UpdateRemotePlugins<cr>')
+rmap('<leader>pu', ':PlugUpdate<cr>')
+rmap('<leader>urp', ':UpdateRemotePlugins<cr>')

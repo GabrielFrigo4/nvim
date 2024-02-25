@@ -19,7 +19,8 @@ treesitter.setup({
     ensure_installed = {
         "c", "cpp", "c_sharp", "lua", "rust", "java", "python", "zig", "javascript", -- languages
         "git_config", "git_rebase", "gitattributes", "gitcommit", "gitignore",       -- github
-        "vim", "bash", "arduino",
+        "bash", "arduino",
+        "vimdoc", "vim",
         "cuda", "glsl", "hlsl",
         "yaml", "toml",
         "make", "cmake",

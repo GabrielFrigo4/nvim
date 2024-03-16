@@ -1,4 +1,4 @@
-# NVIM
+# Nvim
 NeoVim config
 
 This repository is the configuration of the NeoVim code editor that Gabriel Frigo uses

@@ -1,7 +1,7 @@
-# nvim
+# NVIM
 NeoVim config
 
-This repository is the configuration of the neovim code editor that Gabriel Frigo uses
+This repository is the configuration of the NeoVim code editor that Gabriel Frigo uses
 
 For install plug manager uses:
   

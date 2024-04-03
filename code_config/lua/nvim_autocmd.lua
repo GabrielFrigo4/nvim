@@ -32,6 +32,27 @@ treesitter.setup({
     matchup = { enable = true },
 })
 
+-- NvimTree
+local nvimtree = require('nvim-tree')
+nvimtree.setup({
+    sort = {
+        sorter = "case_sensitive",
+    },
+    view = {
+        width = 30,
+    },
+    renderer = {
+        group_empty = true,
+    },
+    filters = {
+        dotfiles = false,
+    },
+})
+
+-- OilNvim
+local oil = require('oil')
+oil.setup()
+
 -- INTEL X86 SINTAX
 local x86 = {
     { { '*.x86', '*.xinc' },  'set ft=asm' },  --GAS

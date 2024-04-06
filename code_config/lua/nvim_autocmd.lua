@@ -17,13 +17,13 @@ end
 local treesitter = require('nvim-treesitter.configs')
 treesitter.setup({
     ensure_installed = {
-        "c", "cpp", "c_sharp", "lua", "rust", "go", "java", "python", "zig", "javascript",  -- Languages
-        "git_config", "git_rebase", "gitattributes", "gitcommit", "gitignore",              -- GIT
-        "cuda", "glsl", "hlsl",                                                             -- GPU
-        "vimdoc", "vim",                                                                    -- VIM
-        "yaml", "toml",                                                                     -- Data
-        "make", "cmake",                                                                    -- Make
-        "bash", "sql", "arduino",                                                           -- Other
+        "c", "cpp", "c_sharp", "lua", "rust", "go", "java", "python", "zig", "javascript", -- Languages
+        "git_config", "git_rebase", "gitattributes", "gitcommit", "gitignore",             -- GIT
+        "cuda", "glsl", "hlsl",                                                            -- GPU
+        "vimdoc", "vim",                                                                   -- VIM
+        "yaml", "toml",                                                                    -- Data
+        "make", "cmake",                                                                   -- Make
+        "bash", "sql", "arduino",                                                          -- Other
     },
     highlight = { enable = true },
     indent = { enable = true },
@@ -43,6 +43,15 @@ nvimtree.setup({
     },
     renderer = {
         group_empty = true,
+        indent_markers = {
+            enable = true,
+            icons = {
+                corner = "└ ",
+                edge = "│ ",
+                item = "│ ",
+                none = "  ",
+            },
+        },
     },
     filters = {
         dotfiles = false,

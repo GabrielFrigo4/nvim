@@ -3,6 +3,7 @@ Nvim.plug.init()
 -- top plug
 Nvim.plug.get('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Nvim.plug.get('bluz71/vim-nightfly-colors', { ['as'] = 'nightfly' })
+Nvim.plug.get('nvim-tree/nvim-web-devicons')
 Nvim.plug.get('nvim-tree/nvim-tree.lua')
 Nvim.plug.get('stevearc/oil.nvim')
 

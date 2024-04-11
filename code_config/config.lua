@@ -5,14 +5,17 @@ Nvim.call.luaFile('nvim_nnoremap', true)
 Nvim.call.luaFile('nvim_plug', true)
 Nvim.call.vimFile('nvim_plug', true)
 
--- enable mouse
+-- mouse
 Nvim.option.mouse = 'a'
 Nvim.option.mousemodel = 'popup'
 
--- enable clipboard
+-- clipboard
 Nvim.option.clipboard:append('unnamed', 'unnamedplus')
 
--- config text
+-- cursor
+Nvim.option.guicursor = ''
+
+-- text
 Nvim.option.tabstop = 4
 Nvim.option.shiftwidth = 4
 Nvim.option.relativenumber = true

@@ -1,2 +1,2 @@
 GuiFont RobotoMono Nerd Font:h11:b
-set guicursor+=a:-blinkwait600-blinkoff550-blinkon600
+set guicursor+=a:-blinkwait500-blinkoff500-blinkon500

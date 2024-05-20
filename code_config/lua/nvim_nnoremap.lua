@@ -1,6 +1,13 @@
+-- ################################
+-- # Nvim-Lua NNoReMap
+-- ################################
+
+
+-- MapLeader
 Nvim.global.mapleader = '\\'
 Nvim.global.maplocalleader = Nvim.global.mapleader
 
+-- NNoReMap Function
 local function nrmap(shortcut, command)
     Nvim.keymap.set('', shortcut, command, { noremap = true, silent = true })
 end

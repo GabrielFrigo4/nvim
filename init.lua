@@ -1,4 +1,9 @@
--- Nvim var
+-- ################################
+-- # Nvim-Lua Table Variables
+-- ################################
+
+
+-- Nvim Table Var
 Nvim = {
     -- check bool variables
     isWin = vim.fn.has('win32') == 1,
@@ -61,4 +66,5 @@ Nvim = {
     },
 }
 
+-- Call Nvim Lua Config
 Nvim.call.luaFile('config', false)

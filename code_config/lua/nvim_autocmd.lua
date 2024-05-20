@@ -1,4 +1,9 @@
--- Config file extension
+-- ################################
+-- # Nvim-Lua AutoCommand
+-- ################################
+
+
+-- AutoCommand Function
 local function setExtCmd(extension, command)
     Nvim.autocmd({ 'BufNewFile', 'BufRead' }, {
         pattern = extension,
@@ -62,6 +67,12 @@ nvimtree.setup({
 local oil = require('oil')
 oil.setup()
 
+
+-- ################################
+-- # Nvim-Lua Sintax
+-- ################################
+
+
 -- INTEL X86 SINTAX
 local x86 = {
     { { '*.x86', '*.xinc' },  'set ft=asm' },  --GAS
@@ -96,3 +107,30 @@ if Nvim.isUnix then
     -- ASM
     setExtCmd({ '*.asm', '*.inc' }, 'set ft=nasm')
 end
+
+
+-- ################################
+-- # Nvim-Lua Tab Indent
+-- ################################
+
+
+-- Tab Indent
+local tabs = {
+    -- Assembly
+    '*.asm', '*.inc',
+    '*.x86', '*.xinc',
+    '*.masm', '*.minc',
+    '*.nasm', '*.ninc',
+    '*.fasm', '*.finc',
+    '*.s', '*.sinc',
+    '*.S', '*.Sinc',
+    '*.arm', '*.ainc',
+    '*.riscv', '*.rinc',
+    -- Python
+    '*.py', '.pyw',
+    -- Lua
+    '*.lua', '*.wlua',
+    -- Rust
+    '*.rs'
+}
+setExtCmd(tabs, 'set noet ci pi sts=0 sw=4 ts=4')

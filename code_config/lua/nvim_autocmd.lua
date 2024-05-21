@@ -75,7 +75,7 @@ oil.setup()
 
 -- INTEL X86 SINTAX
 local x86 = {
-    { { '*.x86', '*.xinc' },  'set ft=asm' },  --GAS
+    { { '*.x86', '*.x64', '*.xinc' },  'set ft=asm' },  -- GAS
     { { '*.masm', '*.minc' }, 'set ft=masm' }, -- MASM
     { { '*.nasm', '*.ninc' }, 'set ft=nasm' }, -- NASM
     { { '*.fasm', '*.finc' }, 'set ft=fasm' }, -- FASM
@@ -118,12 +118,12 @@ end
 local tabs = {
     -- Assembly
     '*.asm', '*.inc',
-    '*.x86', '*.xinc',
     '*.masm', '*.minc',
     '*.nasm', '*.ninc',
     '*.fasm', '*.finc',
     '*.s', '*.i',
     '*.S', '*.I',
+    '*.x86', '*.x64', '*.xinc',
     '*.arm', '*.ainc',
     '*.riscv', '*.rinc',
     -- Python

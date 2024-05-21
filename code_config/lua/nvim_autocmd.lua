@@ -79,8 +79,8 @@ local x86 = {
     { { '*.masm', '*.minc' }, 'set ft=masm' }, -- MASM
     { { '*.nasm', '*.ninc' }, 'set ft=nasm' }, -- NASM
     { { '*.fasm', '*.finc' }, 'set ft=fasm' }, -- FASM
-    { { '*.s', '*.sinc' },    'set ft=asm' },  -- GAS
-    { { '*.S', '*.Sinc' },    'set ft=asm' }   -- GAS
+    { { '*.s', '*.i' },    'set ft=asm' },  -- GAS
+    { { '*.S', '*.I' },    'set ft=asm' }   -- GAS
 }
 setListExtCmd(x86)
 
@@ -122,8 +122,8 @@ local tabs = {
     '*.masm', '*.minc',
     '*.nasm', '*.ninc',
     '*.fasm', '*.finc',
-    '*.s', '*.sinc',
-    '*.S', '*.Sinc',
+    '*.s', '*.i',
+    '*.S', '*.I',
     '*.arm', '*.ainc',
     '*.riscv', '*.rinc',
     -- Python

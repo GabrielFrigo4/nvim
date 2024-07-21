@@ -18,6 +18,7 @@ nrmap('<M-,>', '<C-o>')
 
 -- Window Navigate Shortcut
 nrmap('<S-tab>', '<C-w>w')
+nrmap('<M-]>', '<C-w>w')
 nrmap('<M-up>', '<C-w><up>')
 nrmap('<M-down>', '<C-w><down>')
 nrmap('<M-left>', '<C-w><left>')
@@ -30,3 +31,4 @@ nrmap('<leader>urp', ':UpdateRemotePlugins<cr>')
 
 -- NvimTree Shortcut
 nrmap('<C-\\>', ':NvimTreeToggle<cr>')
+nrmap('<M-[>', ':NvimTreeToggle<cr>')

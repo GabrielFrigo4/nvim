@@ -22,6 +22,8 @@ Nvim.option.clipboard:append('unnamed', 'unnamedplus')
 
 -- cursor
 Nvim.option.guicursor = ''
+Nvim.option.cursorline = true
+Nvim.option.cursorcolumn = true
 
 -- text tab
 Nvim.option.autoindent = true

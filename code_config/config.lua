@@ -21,18 +21,23 @@ Nvim.option.mousemodel = 'popup'
 Nvim.option.clipboard:append('unnamed', 'unnamedplus')
 
 -- cursor
-Nvim.option.guicursor = ''
-Nvim.option.cursorline = true
 Nvim.option.cursorcolumn = true
+Nvim.option.cursorline = true
 
--- text tab
-Nvim.option.autoindent = true
-Nvim.option.expandtab = true
-Nvim.option.copyindent = true
+-- indent
 Nvim.option.preserveindent = true
+Nvim.option.autoindent = true
+Nvim.option.copyindent = true
+
+-- tab
+Nvim.option.expandtab = false
 Nvim.option.softtabstop = 0
 Nvim.option.shiftwidth = 4
 Nvim.option.tabstop = 4
+
+-- text
+Nvim.option.smartcase = true
+Nvim.option.encoding = 'UTF-8'
 
 -- gui / cli
 Nvim.option.relativenumber = true

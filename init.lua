@@ -68,3 +68,6 @@ Nvim = {
 
 -- Call Nvim Lua Config
 Nvim.call.luaFile('config', false)
+
+-- Call Nvim Vim Config
+Nvim.call.vimFile('config', false)

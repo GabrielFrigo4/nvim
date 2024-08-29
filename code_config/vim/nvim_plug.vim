@@ -5,4 +5,4 @@ syntax on
 set background=dark
 
 " Set default theme color
-colorscheme nightfly
+colorscheme vscode

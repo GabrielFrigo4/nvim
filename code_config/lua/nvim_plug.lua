@@ -24,6 +24,7 @@ Nvim.plug.get('bfrg/vim-cpp-modern')
 -- theme
 Nvim.plug.get('bluz71/vim-nightfly-colors', { ['as'] = 'nightfly' })
 Nvim.plug.get('joshdick/onedark.vim')
+Nvim.plug.get('Mofiqul/vscode.nvim')
 
 -- CLOSE PLUG
 Nvim.plug.close()

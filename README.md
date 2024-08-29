@@ -18,3 +18,8 @@ iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
 ```bash
 apt install wl-clipboard
 ```
+
+# [xclip](https://github.com/astrand/xclip)
+```bash
+apt install xclip
+```

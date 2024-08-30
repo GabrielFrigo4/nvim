@@ -13,6 +13,7 @@ Nvim = {
     api = vim.api,
     global = vim.g,
     option = vim.opt,
+    guioption = vim.go,
     keymap = vim.keymap,
     augroup = vim.api.nvim_create_augroup,
     autocmd = vim.api.nvim_create_autocmd,

@@ -18,6 +18,7 @@ Nvim.option.mouse = 'a'
 Nvim.option.mousemodel = 'popup'
 
 -- clipboard
+Nvim.guioption = 'adegmrLT'
 Nvim.option.clipboard:append('unnamed', 'unnamedplus')
 
 -- cursor

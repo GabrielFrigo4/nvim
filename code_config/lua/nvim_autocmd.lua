@@ -67,6 +67,10 @@ nvimtree.setup({
 local oil = require('oil')
 oil.setup()
 
+-- OrgMode
+local orgmode = require('orgmode')
+orgmode.setup()
+
 
 -- ################################
 -- # Nvim-Lua Sintax

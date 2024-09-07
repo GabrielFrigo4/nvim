@@ -13,6 +13,10 @@ Nvim.call.vimFile('nvim_plug', true)
 -- autocmd
 Nvim.call.luaFile('nvim_autocmd', true)
 
+-- keys
+Nvim.option.backspace:append('indent', 'eol', 'start')
+Nvim.option.whichwrap:append('<>hl[]')
+
 -- mouse
 Nvim.option.mouse = 'a'
 Nvim.option.mousemodel = 'popup'

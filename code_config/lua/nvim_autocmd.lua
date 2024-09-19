@@ -22,13 +22,14 @@ end
 local treesitter = require('nvim-treesitter.configs')
 treesitter.setup({
     ensure_installed = {
-        "c", "cpp", "c_sharp", "lua", "rust", "go", "java", "python", "zig", "javascript", -- Languages
+        "c", "cpp", "c_sharp", "zig", "rust", "go", "java", "python", "lua", "javascript", -- Languages
         "git_config", "git_rebase", "gitattributes", "gitcommit", "gitignore",             -- GIT
         "cuda", "glsl", "hlsl",                                                            -- GPU
+        "asm", "nasm",                                                                     -- CPU
         "vimdoc", "vim",                                                                   -- VIM
-        "yaml", "toml",                                                                    -- Data
         "make", "cmake",                                                                   -- Make
-        "bash", "sql", "arduino",                                                          -- Other
+        "yaml", "toml", "xml", "json",                                                     -- Data
+        "bash", "sql", "arduino", "org"                                                    -- Other
     },
     highlight = { enable = true },
     indent = { enable = true },

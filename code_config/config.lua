@@ -11,6 +11,9 @@ Nvim.call.vimFile('nvim_mapping', true)
 Nvim.call.luaFile('nvim_plug', true)
 Nvim.call.vimFile('nvim_plug', true)
 
+-- rocks
+Nvim.call.luaFile('nvim_rocks', true)
+
 -- autocmd
 Nvim.call.luaFile('nvim_autocmd', true)
 

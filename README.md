@@ -31,6 +31,12 @@ __WIN__
 luarocks --lua-version=5.1 --tree "C:\Users\gabri\AppData\Local\nvim-data\rocks" --server='https://nvim-neorocks.github.io/rocks-binaries/' install rocks.nvim
 ```
 
+## Rocks Packages
+
+```sh
+:Rocks install neorg
+```
+
 # [wl-clipboard](https://github.com/bugaevc/wl-clipboard)
 ```bash
 apt install wl-clipboard

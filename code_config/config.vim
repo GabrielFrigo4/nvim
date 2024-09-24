@@ -1,3 +1,7 @@
+" DEFAULT -------------------------------------------------------------- {{{
+
+" Default code goes here.
+
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
@@ -25,3 +29,19 @@ au VimLeave,VimSuspend * set guicursor=
 let &t_SI = "\<Esc>[5 q"
 let &t_SR = "\<Esc>[3 q"
 let &t_EI = "\<Esc>[1 q"
+
+" }}}
+
+
+" VIMSCRIPT -------------------------------------------------------------- {{{
+
+" This will enable code folding.
+" Use the marker method of folding.
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+" More Vimscripts code goes here.
+
+" }}}

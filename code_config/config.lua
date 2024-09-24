@@ -3,8 +3,9 @@
 -- ################################
 
 
--- nnoremap
-Nvim.call.luaFile('nvim_nnoremap', true)
+-- mapping
+Nvim.call.luaFile('nvim_mapping', true)
+Nvim.call.vimFile('nvim_mapping', true)
 
 -- plug
 Nvim.call.luaFile('nvim_plug', true)

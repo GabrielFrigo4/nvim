@@ -29,7 +29,7 @@ treesitter.setup({
         "vimdoc", "vim",                                                                   -- VIM
         "make", "cmake",                                                                   -- Make
         "yaml", "toml", "xml", "json",                                                     -- Data
-        "org", "norg",                                                                     -- Organization
+        "org", "norg", "norg_meta",                                                        -- Organization
         "bash", "sql", "arduino"                                                           -- Other
     },
     highlight = { enable = true },

@@ -8,6 +8,7 @@ Nvim.plug.init()
 
 -- libs
 Nvim.plug.get('nvim-tree/nvim-web-devicons')
+Nvim.plug.get('nvim-lua/plenary.nvim')
 
 -- tools
 Nvim.plug.get('nvim-tree/nvim-tree.lua')

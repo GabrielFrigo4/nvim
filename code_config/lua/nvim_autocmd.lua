@@ -29,7 +29,8 @@ treesitter.setup({
         "vimdoc", "vim",                                                                   -- VIM
         "make", "cmake",                                                                   -- Make
         "yaml", "toml", "xml", "json",                                                     -- Data
-        "bash", "sql", "arduino", "org"                                                    -- Other
+        "org", "norg",                                                                     -- Organization
+        "bash", "sql", "arduino"                                                           -- Other
     },
     highlight = { enable = true },
     indent = { enable = true },
@@ -72,6 +73,22 @@ oil.setup()
 local orgmode = require('orgmode')
 orgmode.setup()
 
+-- Neorg
+local neorg = require('neorg')
+neorg.setup({
+    ["core.defaults"] = {},
+    ["core.concealer"] = {}
+})
+
+
+-- ################################
+-- # Nvim-Lua Theme
+-- ################################
+
+
+local kanagawa = require("kanagawa")
+kanagawa.load("wave")
+
 
 -- ################################
 -- # Nvim-Lua Sintax
@@ -80,12 +97,12 @@ orgmode.setup()
 
 -- INTEL X86 SINTAX
 local x86 = {
-    { { '*.x86', '*.x64', '*.xinc' },  'set ft=asm' },  -- GAS
-    { { '*.masm', '*.minc' }, 'set ft=masm' }, -- MASM
-    { { '*.nasm', '*.ninc' }, 'set ft=nasm' }, -- NASM
-    { { '*.fasm', '*.finc' }, 'set ft=fasm' }, -- FASM
-    { { '*.s', '*.i' },    'set ft=asm' },  -- GAS
-    { { '*.S', '*.I' },    'set ft=asm' }   -- GAS
+    { { '*.x86', '*.x64', '*.xinc' }, 'set ft=asm' },  -- GAS
+    { { '*.masm', '*.minc' },         'set ft=masm' }, -- MASM
+    { { '*.nasm', '*.ninc' },         'set ft=nasm' }, -- NASM
+    { { '*.fasm', '*.finc' },         'set ft=fasm' }, -- FASM
+    { { '*.s', '*.i' },               'set ft=asm' },  -- GAS
+    { { '*.S', '*.I' },               'set ft=asm' }   -- GAS
 }
 setListExtCmd(x86)
 
@@ -121,6 +138,8 @@ end
 
 -- Tab Indent
 local tabs = {
+    -- Organization
+    'org', 'norg',
     -- Assembly
     '*.asm', '*.inc',
     '*.masm', '*.minc',

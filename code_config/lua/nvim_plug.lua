@@ -23,6 +23,7 @@ Nvim.plug.get('kylelaker/riscv.vim')
 
 -- theme
 Nvim.plug.get('bluz71/vim-nightfly-colors', { ['as'] = 'nightfly' })
+Nvim.plug.get('rebelot/kanagawa.nvim')
 Nvim.plug.get('joshdick/onedark.vim')
 Nvim.plug.get('Mofiqul/vscode.nvim')
 

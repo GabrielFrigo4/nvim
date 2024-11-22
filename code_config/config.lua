@@ -40,7 +40,7 @@ Nvim.option.copyindent = true
 
 -- tab
 Nvim.option.expandtab = false
-Nvim.option.softtabstop = 0
+Nvim.option.softtabstop = 4
 Nvim.option.shiftwidth = 4
 Nvim.option.tabstop = 4
 

@@ -2,7 +2,7 @@
 set background=dark
 
 " Set default theme color
-colorscheme vscode
+colorscheme kanagawa
 
 " Enable highlighting of C++11 attributes
 let g:cpp_attributes_highlight = 1

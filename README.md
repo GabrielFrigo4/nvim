@@ -38,11 +38,16 @@ luarocks --lua-version=5.1 --tree "C:\Users\gabri\AppData\Local\nvim-data\rocks"
 ```
 
 # [wl-clipboard](https://github.com/bugaevc/wl-clipboard)
-```bash
-apt install wl-clipboard
+```zsh
+yay -S wl-clipboard
 ```
 
 # [xclip](https://github.com/astrand/xclip)
-```bash
-apt install xclip
+```zsh
+yay -S xclip
+```
+
+# [win32yank](https://github.com/equalsraf/win32yank)
+```pwsh
+winget install equalsraf.win32yank
 ```

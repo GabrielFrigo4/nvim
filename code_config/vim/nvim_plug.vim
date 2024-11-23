@@ -1,9 +1,3 @@
-" Set default background color
-set background=dark
-
-" Set default theme color
-colorscheme kanagawa
-
 " Enable highlighting of C++11 attributes
 let g:cpp_attributes_highlight = 1
 

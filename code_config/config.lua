@@ -4,18 +4,18 @@
 
 
 -- mapping
-Nvim.call.luaFile('nvim_mapping', true)
-Nvim.call.vimFile('nvim_mapping', true)
+Nvim.call.file.lua('nvim_mapping', true)
+Nvim.call.file.vim('nvim_mapping', true)
 
 -- plug
-Nvim.call.luaFile('nvim_plug', true)
-Nvim.call.vimFile('nvim_plug', true)
+Nvim.call.file.lua('nvim_plug', true)
+Nvim.call.file.vim('nvim_plug', true)
 
--- rocks
-Nvim.call.luaFile('nvim_rocks', true)
+-- lazy
+Nvim.call.file.lua('nvim_lazy', true)
 
 -- autocmd
-Nvim.call.luaFile('nvim_autocmd', true)
+Nvim.call.file.lua('nvim_autocmd', true)
 
 -- keys
 Nvim.option.backspace:append('indent', 'eol', 'start')

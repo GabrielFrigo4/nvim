@@ -7,7 +7,7 @@
 local function setExtCmd(extension, command)
     Nvim.autocmd({ 'BufNewFile', 'BufRead' }, {
         pattern = extension,
-        command = command
+        command = command,
     })
 end
 
@@ -17,77 +17,6 @@ local function setListExtCmd(list)
         setExtCmd(extCmd[1], extCmd[2])
     end
 end
-
--- TreeSitter
-local treesitter = require('nvim-treesitter.configs')
-treesitter.setup({
-    ensure_installed = {
-        "c", "cpp", "c_sharp", "zig", "rust", "go", "java", "python", "lua", "javascript", -- Languages
-        "git_config", "git_rebase", "gitattributes", "gitcommit", "gitignore",             -- GIT
-        "cuda", "glsl", "hlsl",                                                            -- GPU
-        "asm", "nasm",                                                                     -- CPU
-        "vimdoc", "vim",                                                                   -- VIM
-        "make", "cmake",                                                                   -- Make
-        "yaml", "toml", "xml", "json",                                                     -- Data
-        "org", "norg", "norg_meta",                                                        -- Organization
-        "bash", "sql", "arduino"                                                           -- Other
-    },
-    highlight = { enable = true },
-    indent = { enable = true },
-
-    -- setup modules
-    matchup = { enable = true },
-})
-
--- NvimTree
-local nvimtree = require('nvim-tree')
-nvimtree.setup({
-    sort = {
-        sorter = "case_sensitive",
-    },
-    view = {
-        width = 30,
-    },
-    renderer = {
-        group_empty = true,
-        indent_markers = {
-            enable = true,
-            icons = {
-                corner = "└ ",
-                edge = "│ ",
-                item = "│ ",
-                none = "  ",
-            },
-        },
-    },
-    filters = {
-        dotfiles = false,
-    },
-})
-
--- OilNvim
-local oil = require('oil')
-oil.setup()
-
--- OrgMode
-local orgmode = require('orgmode')
-orgmode.setup()
-
--- Neorg
-local neorg = require('neorg')
-neorg.setup({
-    ["core.defaults"] = {},
-    ["core.concealer"] = {}
-})
-
-
--- ################################
--- # Nvim-Lua Theme
--- ################################
-
-
-local kanagawa = require("kanagawa")
-kanagawa.load("wave")
 
 
 -- ################################
@@ -102,7 +31,7 @@ local x86 = {
     { { '*.nasm', '*.ninc' },         'set ft=nasm' }, -- NASM
     { { '*.fasm', '*.finc' },         'set ft=fasm' }, -- FASM
     { { '*.s', '*.i' },               'set ft=asm' },  -- GAS
-    { { '*.S', '*.I' },               'set ft=asm' }   -- GAS
+    { { '*.S', '*.I' },               'set ft=asm' },  -- GAS
 }
 setListExtCmd(x86)
 
@@ -139,7 +68,7 @@ end
 -- Tab Indent
 local tabs = {
     -- Organization
-    'org', 'norg',
+    '.org', '.norg',
     -- Assembly
     '*.asm', '*.inc',
     '*.masm', '*.minc',
@@ -155,6 +84,6 @@ local tabs = {
     -- Lua
     '*.lua', '*.wlua',
     -- Rust
-    '*.rs'
+    '*.rs',
 }
-setExtCmd(tabs, 'set noet ci pi sts=0 sw=4 ts=4')
+setExtCmd(tabs, 'set noet ci pi sts=4 sw=4 ts=4')

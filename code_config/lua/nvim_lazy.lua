@@ -69,6 +69,7 @@ lazy.setup({
 					load = {
 						["core.defaults"] = {},
 						["core.concealer"] = {},
+						["core.export"] = {},
 						["core.dirman"] = {
 							config = {
 								workspaces = {

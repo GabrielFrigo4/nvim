@@ -54,6 +54,7 @@ lazy.setup({
 				matchup = {
 					enable = true
 				},
+				sync_install = false,
 			},
 			config = function(_, opts)
 				local treesitter = require('nvim-treesitter.configs')

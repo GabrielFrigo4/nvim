@@ -65,22 +65,24 @@ lazy.setup({
 			"nvim-neorg/neorg",
 			lazy = false,
 			version = "*",
-			config = function()
-				require("neorg").setup {
-					load = {
-						["core.defaults"] = {},
-						["core.concealer"] = {},
-						["core.export"] = {},
-						["core.dirman"] = {
-							config = {
-								workspaces = {
-									workspace = "~/Workspace",
-								},
-								default_workspace = "workspace",
+			opts = {
+				load = {
+					["core.defaults"] = {},
+					["core.concealer"] = {},
+					["core.export"] = {},
+					["core.dirman"] = {
+						config = {
+							workspaces = {
+								workspace = "~/Workspace",
 							},
+							default_workspace = "workspace",
 						},
 					},
-				}
+				},
+			},
+			config = function(_, opts)
+				local neorg = require("neorg")
+				neorg.setup(opts)
 
 				Nvim.winoption.foldlevel = 99
 				Nvim.winoption.conceallevel = 2

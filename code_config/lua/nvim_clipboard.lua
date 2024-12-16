@@ -13,10 +13,10 @@ if Nvim.isWsl then
             },
             paste = {
                 ["+"] = (function()
-                    return Nvim.func.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { '' }, 1)
+                    return Nvim.func.systemlist('wl-paste --no-newline | sed -e "s/\r$//"', { '' }, 1)
                 end),
                 ["*"] = (function()
-                    return Nvim.func.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { '' }, 1)
+                    return Nvim.func.systemlist('wl-paste --no-newline | sed -e "s/\r$//"', { '' }, 1)
                 end),
             },
             cache_enabled = true
@@ -29,15 +29,11 @@ if Nvim.isWsl then
                 ["*"] = 'xclip -i -selection clipboard',
             },
             paste = {
-                ["+"] = 'xclip -o -selection clipboard',
-                ["*"] = 'xclip -o -selection clipboard',
-            },
-            paste = {
                 ["+"] = (function()
-                    return Nvim.func.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { '' }, 1)
+                    return Nvim.func.systemlist('xclip -o -selection clipboard | sed -e "s/\r$//"', { '' }, 1)
                 end),
                 ["*"] = (function()
-                    return Nvim.func.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { '' }, 1)
+                    return Nvim.func.systemlist('xclip -o -selection clipboard | sed -e "s/\r$//"', { '' }, 1)
                 end),
             },
             cache_enabled = true

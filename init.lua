@@ -8,6 +8,7 @@ Nvim = {
     -- check bool variables
     isWin = vim.fn.has('win32') == 1,
     isUnix = vim.fn.has('unix') == 1,
+    isWsl = vim.fn.has('wsl') == 1,
 
     -- nvim table variables
     var = vim.v,

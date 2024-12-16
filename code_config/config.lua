@@ -14,6 +14,9 @@ Nvim.call.file.vim('nvim_plug', true)
 -- lazy
 Nvim.call.file.lua('nvim_lazy', true)
 
+-- clipboard
+Nvim.call.file.lua('nvim_clipboard', true)
+
 -- autocmd
 Nvim.call.file.lua('nvim_autocmd', true)
 

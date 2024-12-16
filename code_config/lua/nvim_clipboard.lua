@@ -9,14 +9,14 @@ if Nvim.isWsl then
             name = "wl-clipboard (wsl)",
             copy = {
                 ["+"] = 'wl-copy --foreground --type text/plain',
-                ["*"] = 'wl-copy --foreground --primary --type text/plain',
+                ["*"] = 'wl-copy --foreground --type text/plain',
             },
             paste = {
                 ["+"] = (function()
                     return Nvim.func.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { '' }, 1)
                 end),
                 ["*"] = (function()
-                    return Nvim.func.systemlist('wl-paste --primary --no-newline|sed -e "s/\r$//"', { '' }, 1)
+                    return Nvim.func.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { '' }, 1)
                 end),
             },
             cache_enabled = true
@@ -26,17 +26,25 @@ if Nvim.isWsl then
             name = "xclip (wsl)",
             copy = {
                 ["+"] = 'xclip -i -selection clipboard',
-                ["*"] = 'xclip -i -selection primary',
+                ["*"] = 'xclip -i -selection clipboard',
             },
             paste = {
                 ["+"] = 'xclip -o -selection clipboard',
-                ["*"] = 'xclip -o -selection primary',
+                ["*"] = 'xclip -o -selection clipboard',
+            },
+            paste = {
+                ["+"] = (function()
+                    return Nvim.func.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { '' }, 1)
+                end),
+                ["*"] = (function()
+                    return Nvim.func.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { '' }, 1)
+                end),
             },
             cache_enabled = true
         }
     elseif Nvim.func.executable("win32yank.exe") == 1 then
         Nvim.global.clipboard = {
-            name = 'win32yank.exe (wsl)',
+            name = 'win32yank (wsl)',
             copy = {
                 ['+'] = 'win32yank.exe -i --crlf',
                 ['*'] = 'win32yank.exe -i --crlf',
@@ -47,29 +55,16 @@ if Nvim.isWsl then
             },
             cache_enabled = true,
         }
-    elseif Nvim.func.executable("pwsh") == 1 then
+    elseif Nvim.func.executable("pwsh.exe") == 1 and Nvim.func.executable("clip.exe") == 1 then
         Nvim.global.clipboard = {
-            name = 'pwsh (wsl)',
+            name = 'pwsh and clip (wsl)',
             copy = {
-                ['+'] = 'pwsh -nop -c Set-Clipboard',
-                ['*'] = 'pwsh -nop -c Set-Clipboard',
+                ['+'] = 'clip.exe',
+                ['*'] = 'clip.exe',
             },
             paste = {
-                ['+'] = 'pwsh -nop -c Get-Clipboard',
-                ['*'] = 'pwsh -nop -c Get-Clipboard',
-            },
-            cache_enabled = true,
-        }
-    elseif Nvim.func.executable("pwsh.exe") == 1 then
-        Nvim.global.clipboard = {
-            name = 'pwsh.exe (wsl)',
-            copy = {
-                ['+'] = 'pwsh.exe -nop -c Set-Clipboard',
-                ['*'] = 'pwsh.exe -nop -c Set-Clipboard',
-            },
-            paste = {
-                ['+'] = 'pwsh.exe -nop -c Get-Clipboard',
-                ['*'] = 'pwsh.exe -nop -c Get-Clipboard',
+                ['+'] = 'pwsh.exe -nol -nop -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("""`r""", """"""))',
+                ['*'] = 'pwsh.exe -nol -nop -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("""`r""", """"""))',
             },
             cache_enabled = true,
         }

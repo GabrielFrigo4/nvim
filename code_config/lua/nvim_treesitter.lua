@@ -3,7 +3,7 @@
 -- ################################
 
 
--- 
+-- Grammars List
 local grammars = {
     -- Languages (ASM)
     "asm", "nasm",
@@ -32,16 +32,17 @@ local grammars = {
     "bash", "sql", "arduino"
 }
 
--- 
+-- TSInstall Lua Function
 local ts_install = require('nvim-treesitter.install').commands.TSInstall['run!']
 
---
+-- TreeSitterInstall Lua Function
 local function tree_sitter_install()
     for _, grammar in ipairs(grammars) do
         ts_install(grammar)
     end
 end
 
+-- Create TreeSitterInstall User Command
 Nvim.api.nvim_create_user_command('TreeSitterInstall', tree_sitter_install,
   {nargs = 0, desc = 'Install TreeSitter Grammars'}
 )

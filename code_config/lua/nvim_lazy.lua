@@ -16,7 +16,6 @@ lazy.setup({
 		},
 		{
 			"nvim-treesitter/nvim-treesitter",
-			build = ":TSUpdate",
 			opts = {
 				ensure_installed = {
 					-- Languages (ASM)

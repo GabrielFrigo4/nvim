@@ -20,6 +20,9 @@ Nvim.call.file.lua('nvim_clipboard', true)
 -- autocmd
 Nvim.call.file.lua('nvim_autocmd', true)
 
+-- treesitter
+Nvim.call.file.lua('nvim_treesitter', true)
+
 -- keys
 Nvim.option.backspace:append('indent', 'eol', 'start')
 Nvim.option.whichwrap:append('<>hl[]')

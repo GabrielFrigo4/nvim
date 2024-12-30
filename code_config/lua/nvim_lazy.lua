@@ -16,34 +16,8 @@ lazy.setup({
 		},
 		{
 			"nvim-treesitter/nvim-treesitter",
+			lazy = false,
 			opts = {
-				ensure_installed = {
-					-- Languages (ASM)
-					"asm", "nasm",
-					-- Languages (BIN)
-					"c", "cpp", "zig", "rust", "go",
-					-- Languages (JIT)
-					"c_sharp", "java",
-					-- Languages (VM)
-					"python", "lua", "javascript",
-					-- GIT
-					"git_config", "git_rebase", "gitattributes",
-					"gitcommit", "gitignore",
-					-- GPU
-					"cuda", "glsl", "hlsl",
-					-- CPU
-					"verilog", "vhdl",
-					-- VIM
-					"vimdoc", "vim",
-					-- Make
-					"make", "cmake",
-					-- Data
-					"yaml", "toml", "xml", "json",
-					-- Organization
-					"org", "norg",
-					-- Other
-					"bash", "sql", "arduino"
-				},
 				highlight = {
 					enable = true
 				},
@@ -53,6 +27,7 @@ lazy.setup({
 				matchup = {
 					enable = true
 				},
+				auto_install = true,
 				sync_install = false,
 			},
 			config = function(_, opts)
@@ -82,7 +57,7 @@ lazy.setup({
 			config = function(_, opts)
 				local neorg = require("neorg")
 				neorg.setup(opts)
-
+	
 				Nvim.winoption.foldlevel = 99
 				Nvim.winoption.conceallevel = 2
 			end,

@@ -27,14 +27,9 @@ nvim -u NORC -c "source https://raw.githubusercontent.com/nvim-neorocks/rocks.nv
 ```
 
 __WIN__
+Install [Lua Tools in Scoop](https://github.com/nvim-neorocks/rocks-scoop)
 ```pwsh
 luarocks --lua-version=5.1 --tree "C:\Users\gabri\AppData\Local\nvim-data\rocks" --server='https://nvim-neorocks.github.io/rocks-binaries/' install rocks.nvim
-```
-
-## Rocks Packages
-
-```sh
-:Rocks install neorg
 ```
 
 # [wl-clipboard](https://github.com/bugaevc/wl-clipboard)

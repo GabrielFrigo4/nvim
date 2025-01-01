@@ -57,10 +57,21 @@ lazy.setup({
 			config = function(_, opts)
 				local neorg = require("neorg")
 				neorg.setup(opts)
-	
+
 				Nvim.winoption.foldlevel = 99
 				Nvim.winoption.conceallevel = 2
 			end,
+		},
+		{
+			"NeogitOrg/neogit",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"sindrets/diffview.nvim",
+				"nvim-telescope/telescope.nvim",
+				"ibhagwan/fzf-lua",
+				"echasnovski/mini.pick",
+			},
+			config = true
 		},
 		{
 			"nvim-tree/nvim-tree.lua",

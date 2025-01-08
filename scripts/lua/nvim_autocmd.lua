@@ -85,5 +85,7 @@ local tabs = {
     '*.lua', '*.wlua',
     -- Rust
     '*.rs',
+    -- Zig
+    '*.zig',
 }
 setExtCmd(tabs, 'set noet ci pi sts=4 sw=4 ts=4')

@@ -9,7 +9,6 @@ Nvim.call.file.vim('nvim_mapping', true)
 
 -- plug
 Nvim.call.file.lua('nvim_plug', true)
-Nvim.call.file.vim('nvim_plug', true)
 
 -- lazy
 Nvim.call.file.lua('nvim_lazy', true)

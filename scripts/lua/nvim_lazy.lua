@@ -10,6 +10,7 @@ lazy.setup({
 	spec = {
 		{
 			"rebelot/kanagawa.nvim",
+			version = false,
 			config = function()
 				Nvim.cmd.colorscheme("kanagawa-wave")
 			end,
@@ -17,6 +18,7 @@ lazy.setup({
 		{
 			"nvim-treesitter/nvim-treesitter",
 			lazy = false,
+			version = false,
 			opts = {
 				highlight = {
 					enable = true
@@ -38,7 +40,7 @@ lazy.setup({
 		{
 			"nvim-neorg/neorg",
 			lazy = false,
-			version = "*",
+			version = false,
 			opts = {
 				load = {
 					["core.defaults"] = {},
@@ -71,12 +73,13 @@ lazy.setup({
 				"ibhagwan/fzf-lua",
 				"echasnovski/mini.pick",
 			},
+			version = false,
 			config = true
 		},
 		{
 			"nvim-tree/nvim-tree.lua",
-			version = "*",
 			lazy = false,
+			version = false,
 			dependencies = {
 				"nvim-tree/nvim-web-devicons",
 			},
@@ -110,11 +113,15 @@ lazy.setup({
 		},
 		{
 			'stevearc/oil.nvim',
+			dependencies = {
+				{ "echasnovski/mini.icons", opts = {} },
+			},
+			lazy = false,
 			opts = {},
-			dependencies = { { "echasnovski/mini.icons", opts = {} } },
 		},
 		{
 			'nvim-orgmode/orgmode',
+			lazy = false,
 			event = 'VeryLazy',
 			ft = { 'org' },
 			config = function()

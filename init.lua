@@ -47,18 +47,18 @@ Nvim = {
             lua = function(filePath, isLuaDir)
                 local _path = nil
                 if isLuaDir then
-                    _path = Nvim.path.appData .. '\\code_config\\lua\\' .. filePath .. '.lua'
+                    _path = Nvim.path.appData .. '\\scripts\\lua\\' .. filePath .. '.lua'
                 else
-                    _path = Nvim.path.appData .. '\\code_config\\' .. filePath .. '.lua'
+                    _path = Nvim.path.appData .. '\\scripts\\' .. filePath .. '.lua'
                 end
                 return dofile(Nvim.path.winOrUnix(_path))
             end,
             vim = function(filePath, isVimDir)
                 local _path = nil
                 if isVimDir then
-                    _path = Nvim.path.appData .. '\\code_config\\vim\\' .. filePath .. '.vim'
+                    _path = Nvim.path.appData .. '\\scripts\\vim\\' .. filePath .. '.vim'
                 else
-                    _path = Nvim.path.appData .. '\\code_config\\' .. filePath .. '.vim'
+                    _path = Nvim.path.appData .. '\\scripts\\' .. filePath .. '.vim'
                 end
                 Nvim.cmd('source ' .. Nvim.path.winOrUnix(_path))
             end,

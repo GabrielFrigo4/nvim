@@ -170,6 +170,14 @@ lazy.setup({
 			end,
 		},
 		{
+			"sheerun/vim-polyglot",
+			lazy = false,
+			version = false,
+			config = function()
+				Nvim.global.polyglot_disabled = {'ftdetect'}
+			end,
+		},
+		{
 			"ARM9/arm-syntax-vim",
 			version = false,
 		},

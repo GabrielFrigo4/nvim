@@ -3,6 +3,9 @@
 -- ################################
 
 
+-- polyglot
+Nvim.global.polyglot_disabled = {'ftdetect'}
+
 -- mapping
 Nvim.call.file.lua('nvim_mapping', true)
 Nvim.call.file.vim('nvim_mapping', true)

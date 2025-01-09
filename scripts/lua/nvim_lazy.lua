@@ -78,11 +78,11 @@ lazy.setup({
 		},
 		{
 			"nvim-tree/nvim-tree.lua",
-			lazy = false,
-			version = false,
 			dependencies = {
 				"nvim-tree/nvim-web-devicons",
 			},
+			lazy = false,
+			version = false,
 			opts = {
 				sort = {
 					sorter = "case_sensitive",

@@ -170,10 +170,6 @@ lazy.setup({
 			end,
 		},
 		{
-			"sheerun/vim-polyglot",
-			version = false,
-		},
-		{
 			"ARM9/arm-syntax-vim",
 			version = false,
 		},

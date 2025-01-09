@@ -174,7 +174,7 @@ lazy.setup({
 			lazy = false,
 			version = false,
 			config = function()
-				Nvim.global.polyglot_disabled = {'ftdetect'}
+				Nvim.global.polyglot_disabled = { 'ftdetect' }
 			end,
 		},
 		{

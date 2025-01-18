@@ -170,6 +170,15 @@ lazy.setup({
 			end,
 		},
 		{
+			"nvim-orgmode/org-bullets.nvim",
+			lazy = false,
+			event = "VeryLazy",
+			config = function()
+				local bullets = require("org-bullets")
+				bullets.setup()
+			end,
+		},
+		{
 			"sheerun/vim-polyglot",
 			lazy = false,
 			version = false,

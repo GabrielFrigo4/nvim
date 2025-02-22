@@ -43,6 +43,6 @@ local function tree_sitter_install()
 end
 
 -- Create TreeSitterInstall User Command
-Nvim.api.nvim_create_user_command('TreeSitterInstall', tree_sitter_install,
-  {nargs = 0, desc = 'Install TreeSitter Grammars'}
+Nvim.api.nvim_create_user_command('TreeSitterSetup', tree_sitter_install,
+  {nargs = 0, desc = 'Setup TreeSitter Grammars'}
 )

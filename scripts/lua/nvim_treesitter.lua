@@ -27,7 +27,7 @@ local grammars = {
     -- Data
     "yaml", "toml", "xml", "json",
     -- Organization
-    "org", "norg",
+    "norg", "markdown",
     -- Other
     "bash", "sql", "arduino"
 }

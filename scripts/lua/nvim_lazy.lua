@@ -114,7 +114,7 @@ lazy.setup({
 		{
 			"brenton-leighton/multiple-cursors.nvim",
 			version = false,
-			opts = {}, -- This causes the plugin setup function to be called
+			opts = {},
 			keys = {
 				{ "<C-j>",         "<Cmd>MultipleCursorsAddDown<CR>",          mode = { "n", "x" },      desc = "Add cursor and move down" },
 				{ "<C-k>",         "<Cmd>MultipleCursorsAddUp<CR>",            mode = { "n", "x" },      desc = "Add cursor and move up" },
@@ -158,25 +158,6 @@ lazy.setup({
 			},
 			lazy = false,
 			opts = {},
-		},
-		{
-			"nvim-orgmode/orgmode",
-			lazy = false,
-			event = "VeryLazy",
-			ft = { "org" },
-			config = function()
-				local orgmode = require("orgmode")
-				orgmode.setup()
-			end,
-		},
-		{
-			"nvim-orgmode/org-bullets.nvim",
-			lazy = false,
-			event = "VeryLazy",
-			config = function()
-				local bullets = require("org-bullets")
-				bullets.setup()
-			end,
 		},
 		{
 			"sheerun/vim-polyglot",

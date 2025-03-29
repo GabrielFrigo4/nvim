@@ -12,7 +12,9 @@ local grammars = {
     -- Languages (JIT)
     "c_sharp", "java",
     -- Languages (VM)
-    "python", "lua", "javascript",
+    "python", "lua", "commonlisp",
+    -- Languages (WEB)
+    "javascript", "typescript", "tsx", "html", "css",
     -- GIT
     "git_config", "git_rebase", "gitattributes",
     "gitcommit", "gitignore",

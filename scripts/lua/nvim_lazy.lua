@@ -168,7 +168,7 @@ lazy.setup({
 			end,
 		},
 		{
-			"ARM9/arm-syntax-vim",
+			"GabrielFrigo4/fasm.vim",
 			version = false,
 		},
 		{
@@ -176,8 +176,8 @@ lazy.setup({
 			version = false,
 		},
 		{
-			"fedorenchik/fasm.vim",
-		   version = false,
+			"ARM9/arm-syntax-vim",
+			version = false,
 		},
 	},
 	install = {

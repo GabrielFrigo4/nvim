@@ -175,6 +175,10 @@ lazy.setup({
 			"kylelaker/riscv.vim",
 			version = false,
 		},
+		{
+			"fedorenchik/fasm.vim",
+		   version = false,
+		},
 	},
 	install = {
 		colorscheme = { "kanagawa-wave" }

@@ -26,24 +26,28 @@ end
 
 -- INTEL X86 SINTAX
 local x86 = {
-    { { '*.x86', '*.x64', '*.xinc' }, 'set ft=asm' },  -- GAS
+    { { '*.x86', '*.x64', '*.xinc' }, 'set ft=nasm' }, -- NASM
+    { { '*.X86', '*.X64', '*.Xinc' }, 'set ft=nasm' }, -- NASM
     { { '*.masm', '*.minc' },         'set ft=masm' }, -- MASM
     { { '*.nasm', '*.ninc' },         'set ft=nasm' }, -- NASM
     { { '*.fasm', '*.finc' },         'set ft=fasm' }, -- FASM
-    { { '*.s', '*.i' },               'set ft=asm' },  -- GAS
-    { { '*.S', '*.I' },               'set ft=asm' },  -- GAS
+    { { '*.gas', '*.ginc' },          'set ft=asm' },  -- GAS
+    { { '*.s', '*.i' },               'set ft=nasm' }, -- NASM
+    { { '*.S', '*.I' },               'set ft=nasm' }, -- NASM
 }
 setListExtCmd(x86)
 
 -- ARM SINTAX
 local arm = {
-    { { '*.arm', '*.ainc' }, 'set ft=arm' }
+    { { '*.arm', '*.ainc' }, 'set ft=arm' },
+    { { '*.ARM', '*.AINC' }, 'set ft=arm' },
 }
 setListExtCmd(arm)
 
 -- RISC-V SINTAX
 local riscv = {
-    { { '*.riscv', '*.rinc' }, 'set ft=riscv' }
+    { { '*.riscv', '*.rinc' }, 'set ft=riscv' },
+    { { '*.RISCV', '*.RINC' }, 'set ft=riscv' },
 }
 setListExtCmd(riscv)
 
@@ -74,11 +78,15 @@ local tabs = {
     '*.masm', '*.minc',
     '*.nasm', '*.ninc',
     '*.fasm', '*.finc',
+    '*.gas', '*.ginc',
     '*.s', '*.i',
     '*.S', '*.I',
     '*.x86', '*.x64', '*.xinc',
+    '*.X86', '*.X64', '*.Xinc',
     '*.arm', '*.ainc',
+    '*.ARM', '*.AINC',
     '*.riscv', '*.rinc',
+    '*.RISCV', '*.RINC',
     -- Python
     '*.py', '.pyw',
     -- Lua

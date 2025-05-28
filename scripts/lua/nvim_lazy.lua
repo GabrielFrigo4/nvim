@@ -77,6 +77,18 @@ lazy.setup({
 			config = true
 		},
 		{
+			'nvim-telescope/telescope.nvim',
+			dependencies = {
+				'nvim-lua/plenary.nvim'
+			},
+			lazy = false,
+			version = false,
+			config = function()
+				local telescope = require('telescope')
+				telescope.setup()
+			end,
+		},
+		{
 			"nvim-tree/nvim-tree.lua",
 			dependencies = {
 				"nvim-tree/nvim-web-devicons",

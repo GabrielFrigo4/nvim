@@ -6,15 +6,15 @@
 -- polyglot
 Nvim.global.polyglot_disabled = {'ftdetect'}
 
--- mapping
-Nvim.call.file.lua('nvim_mapping', true)
-Nvim.call.file.vim('nvim_mapping', true)
-
 -- plug
 Nvim.call.file.lua('nvim_plug', true)
 
 -- lazy
 Nvim.call.file.lua('nvim_lazy', true)
+
+-- mapping
+Nvim.call.file.lua('nvim_mapping', true)
+Nvim.call.file.vim('nvim_mapping', true)
 
 -- clipboard
 Nvim.call.file.lua('nvim_clipboard', true)

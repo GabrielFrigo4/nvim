@@ -8,8 +8,8 @@ Nvim.global.mapleader = '\\'
 Nvim.global.maplocalleader = Nvim.global.mapleader
 
 -- NNoReMap Function
-local function nrmap(shortcut, command)
-    Nvim.keymap.set('', shortcut, command, { noremap = true, silent = true })
+local function nrmap(shortcut, command, description)
+    Nvim.keymap.set('', shortcut, command, { desc = description, noremap = true, silent = true })
 end
 
 -- Link Navigate Shortcut
@@ -34,3 +34,10 @@ nrmap('<leader>urp', ':UpdateRemotePlugins<cr>')
 nrmap('<C-\\>', ':NvimTreeToggle<cr>')
 nrmap('<M-[>', ':NvimTreeToggle<cr>')
 nrmap(',', ':NvimTreeToggle<cr>')
+
+-- Telescope Shortcut
+local builtin = require('telescope.builtin')
+nrmap('<C-t>f', builtin.find_files, 'Telescope Find Files')
+nrmap('<C-t>g', builtin.live_grep, 'Telescope Live Grep')
+nrmap('<C-t>b', builtin.buffers, 'Telescope Buffers')
+nrmap('<C-t>t', builtin.help_tags, 'Telescope Help Tags')

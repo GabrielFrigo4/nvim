@@ -35,6 +35,9 @@ nrmap('<C-\\>', ':NvimTreeToggle<cr>')
 nrmap('<M-[>', ':NvimTreeToggle<cr>')
 nrmap(',', ':NvimTreeToggle<cr>')
 
+-- Disable <C-t>
+nrmap('<C-t>', '<Nop>', 'Enable <C-t> for Telescope')
+
 -- Telescope Shortcut
 local builtin = require('telescope.builtin')
 nrmap('<C-t>f', builtin.find_files, 'Telescope Find Files')

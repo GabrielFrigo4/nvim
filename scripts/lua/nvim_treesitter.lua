@@ -8,7 +8,7 @@ local grammars = {
     -- Languages (ASM)
     "asm", "nasm",
     -- Languages (BIN)
-    "c", "cpp", "zig", "rust", "go", "haskell",
+    "c", "cpp", "zig", "rust", "go", "ada", "haskell",
     -- Languages (JIT)
     "c_sharp", "java",
     -- Languages (VM)

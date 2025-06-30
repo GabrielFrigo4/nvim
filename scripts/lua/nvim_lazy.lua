@@ -182,8 +182,8 @@ lazy.setup({
 			version = false,
 		},
 		{
-			"briot/ada.nvim",
-			version = false,
+			"thindil/vim-ada",
+		   version = false,
 		},
 		{
 			"sheerun/vim-polyglot",

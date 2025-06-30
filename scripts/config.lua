@@ -4,7 +4,7 @@
 
 
 -- polyglot
-Nvim.global.polyglot_disabled = {'ftdetect'}
+Nvim.global.polyglot_disabled = {'ftdetect', 'ada'}
 
 -- plug
 Nvim.call.file.lua('nvim_plug', true)

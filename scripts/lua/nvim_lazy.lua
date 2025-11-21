@@ -171,6 +171,7 @@ lazy.setup({
 			lazy = false,
 			opts = {},
 		},
+		--[[
 		{
 			"anurag3301/nvim-platformio.lua",
 			dependencies = {
@@ -181,6 +182,7 @@ lazy.setup({
 			lazy = false,
 			version = false,
 		},
+		--]]
 		{
 			"thindil/vim-ada",
 		   version = false,

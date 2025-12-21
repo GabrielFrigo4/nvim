@@ -1,6 +1,6 @@
--- ################################
--- # Nvim-Lua Clipboard
--- ################################
+-- ============================================================================
+--  Nvim-Lua Clipboard
+-- ============================================================================
 
 
 if Nvim.isWsl then
@@ -59,8 +59,10 @@ if Nvim.isWsl then
                 ['*'] = 'clip.exe',
             },
             paste = {
-                ['+'] = 'pwsh.exe -nol -nop -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("""`r""", """"""))',
-                ['*'] = 'pwsh.exe -nol -nop -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("""`r""", """"""))',
+                ['+'] =
+                'pwsh.exe -nol -nop -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("""`r""", """"""))',
+                ['*'] =
+                'pwsh.exe -nol -nop -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("""`r""", """"""))',
             },
             cache_enabled = true,
         }

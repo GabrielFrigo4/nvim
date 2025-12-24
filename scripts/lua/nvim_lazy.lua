@@ -49,7 +49,7 @@ lazy.setup({
                 highlight    = { enable = true },
                 indent       = { enable = true },
                 matchup      = { enable = true },
-                auto_install = true,
+                auto_install = false,
                 sync_install = false,
             },
             config = function(_, opts)

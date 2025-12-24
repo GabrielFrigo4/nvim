@@ -151,23 +151,23 @@ lazy.setup({
             dependencies = {
                 "williamboman/mason.nvim",
                 "williamboman/mason-lspconfig.nvim",
+                "hrsh7th/cmp-nvim-lsp",
             },
             config = function()
                 require("mason").setup()
+                local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
                 require("mason-lspconfig").setup({
                     ensure_installed = {
                         -- Languages (ASM)
                         "asm_lsp", -- Assembly
 
                         -- Languages (BIN)
-                        "clangd",        -- C, C++
                         "zls",           -- Zig
                         "rust_analyzer", -- Rust
                         "gopls",         -- Go
-                        -- "hls",        -- Haskell
 
                         -- Languages (JIT)
-                        -- "csharp_ls",  -- C#
                         "jdtls", -- Java
 
                         -- Languages (VM)
@@ -192,7 +192,9 @@ lazy.setup({
                     },
                     handlers = {
                         function(server_name)
-                            require("lspconfig")[server_name].setup({})
+                            require("lspconfig")[server_name].setup({
+                                capabilities = capabilities
+                            })
                         end,
                     }
                 })
@@ -205,13 +207,16 @@ lazy.setup({
                 'hrsh7th/cmp-buffer',
                 'hrsh7th/cmp-path',
                 'L3MON4D3/LuaSnip',
+                'saadparwaiz1/cmp_luasnip',
             },
             config = function()
                 local cmp = require 'cmp'
+                local luasnip = require 'luasnip'
+
                 cmp.setup({
                     snippet = {
                         expand = function(args)
-                            require('luasnip').lsp_expand(args.body)
+                            luasnip.lsp_expand(args.body)
                         end,
                     },
                     mapping = cmp.mapping.preset.insert({

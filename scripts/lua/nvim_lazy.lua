@@ -9,7 +9,7 @@ local lazy = require("lazy")
 lazy.setup({
     spec = {
         -- ============================================================================
-        --  1. TEMA
+        --  1. TEMA & VISUAL
         -- ============================================================================
         -- {{{
         {
@@ -20,16 +20,31 @@ lazy.setup({
                 Nvim.cmd.colorscheme("kanagawa-wave")
             end,
         },
+        {
+            'nvim-lualine/lualine.nvim',
+            dependencies = { 'nvim-tree/nvim-web-devicons' },
+            config = function()
+                require('lualine').setup({
+                    options = { theme = 'kanagawa' }
+                })
+            end
+        },
+        {
+            "lukas-reineke/indent-blankline.nvim",
+            main = "ibl",
+            opts = {},
+        },
         -- }}}
 
         -- ============================================================================
-        --  2. SINTAXE E HIGHLIGHT
+        --  2. SINTAXE & HIGHLIGHT
         -- ============================================================================
         -- {{{
         {
             "nvim-treesitter/nvim-treesitter",
             lazy = false,
             version = false,
+            build = ":TSUpdate",
             opts = {
                 highlight    = { enable = true },
                 indent       = { enable = true },
@@ -63,15 +78,7 @@ lazy.setup({
                 view = { width = 30 },
                 renderer = {
                     group_empty = true,
-                    indent_markers = {
-                        enable = true,
-                        icons = {
-                            corner = "└ ",
-                            edge   = "│ ",
-                            item   = "│ ",
-                            none   = "  ",
-                        },
-                    },
+                    indent_markers = { enable = true },
                 },
                 filters = { dotfiles = false },
             },
@@ -88,7 +95,7 @@ lazy.setup({
         -- }}}
 
         -- ============================================================================
-        --  4. FERRAMENTAS
+        --  4. FERRAMENTAS & EDIÇÃO
         -- ============================================================================
         -- {{{
         {
@@ -98,6 +105,19 @@ lazy.setup({
             config = function()
                 require('telescope').setup()
             end,
+        },
+        {
+            "kylechui/nvim-surround",
+            version = "*",
+            event = "VeryLazy",
+            config = function()
+                require("nvim-surround").setup({})
+            end
+        },
+        {
+            'windwp/nvim-autopairs',
+            event = "InsertEnter",
+            config = true
         },
         {
             "NeogitOrg/neogit",
@@ -117,18 +137,104 @@ lazy.setup({
             opts = {},
             cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern" },
             keys = {
-                {
-                    mode = { "v", "n" },
-                    "<Leader>m",
-                    "<cmd>MCstart<cr>",
-                    desc = "Multi Cursor",
-                },
+                { mode = { "v", "n" }, "<Leader>m", "<cmd>MCstart<cr>", desc = "Multi Cursor" },
             },
         },
         -- }}}
 
         -- ============================================================================
-        --  5. LINGUAGENS ESPECÍFICAS
+        --  5. LSP & AUTOCOMPLETE
+        -- ============================================================================
+        -- {{{
+        {
+            "neovim/nvim-lspconfig",
+            dependencies = {
+                "williamboman/mason.nvim",
+                "williamboman/mason-lspconfig.nvim",
+            },
+            config = function()
+                require("mason").setup()
+                require("mason-lspconfig").setup({
+                    ensure_installed = {
+                        -- Languages (ASM)
+                        "asm_lsp", -- Assembly
+
+                        -- Languages (BIN)
+                        "clangd",        -- C, C++
+                        "zls",           -- Zig
+                        "rust_analyzer", -- Rust
+                        "gopls",         -- Go
+                        -- "hls",        -- Haskell
+
+                        -- Languages (JIT)
+                        -- "csharp_ls",  -- C#
+                        "jdtls", -- Java
+
+                        -- Languages (VM)
+                        "pyright", -- Python
+                        "lua_ls",  -- Lua
+
+                        -- Languages (WEB)
+                        "ts_ls", -- Javascript, Typescript
+                        "html",  -- HTML
+                        "cssls", -- CSS
+
+                        -- Make
+                        "neocmake", -- CMake
+
+                        -- Data
+                        "yamlls",  -- YAML
+                        "lemminx", -- XML
+                        "jsonls",  -- JSON
+
+                        -- Other
+                        "bashls", -- Bash
+                    },
+                    handlers = {
+                        function(server_name)
+                            require("lspconfig")[server_name].setup({})
+                        end,
+                    }
+                })
+            end
+        },
+        {
+            'hrsh7th/nvim-cmp',
+            dependencies = {
+                'hrsh7th/cmp-nvim-lsp',
+                'hrsh7th/cmp-buffer',
+                'hrsh7th/cmp-path',
+                'L3MON4D3/LuaSnip',
+            },
+            config = function()
+                local cmp = require 'cmp'
+                cmp.setup({
+                    snippet = {
+                        expand = function(args)
+                            require('luasnip').lsp_expand(args.body)
+                        end,
+                    },
+                    mapping = cmp.mapping.preset.insert({
+                        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                        ['<C-Space>'] = cmp.mapping.complete(),
+                        ['<C-e>'] = cmp.mapping.abort(),
+                        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                        ['<Tab>'] = cmp.mapping.select_next_item(),
+                    }),
+                    sources = cmp.config.sources({
+                        { name = 'nvim_lsp' },
+                        { name = 'luasnip' },
+                    }, {
+                        { name = 'buffer' },
+                    })
+                })
+            end
+        },
+        -- }}}
+
+        -- ============================================================================
+        --  6. LINGUAGENS ESPECÍFICAS
         -- ============================================================================
         -- {{{
         { "GabrielFrigo4/fasm.vim", ft = "fasm" },
@@ -153,3 +259,5 @@ lazy.setup({
     },
     -- }}}
 })
+
+-- }}}

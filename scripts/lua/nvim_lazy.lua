@@ -155,49 +155,6 @@ lazy.setup({
             },
             config = function()
                 require("mason").setup()
-                local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-                require("mason-lspconfig").setup({
-                    ensure_installed = {
-                        -- Languages (ASM)
-                        "asm_lsp", -- Assembly
-
-                        -- Languages (BIN)
-                        "zls",           -- Zig
-                        "rust_analyzer", -- Rust
-                        "gopls",         -- Go
-
-                        -- Languages (JIT)
-                        "jdtls", -- Java
-
-                        -- Languages (VM)
-                        "pyright", -- Python
-                        "lua_ls",  -- Lua
-
-                        -- Languages (WEB)
-                        "ts_ls", -- Javascript, Typescript
-                        "html",  -- HTML
-                        "cssls", -- CSS
-
-                        -- Make
-                        "neocmake", -- CMake
-
-                        -- Data
-                        "yamlls",  -- YAML
-                        "lemminx", -- XML
-                        "jsonls",  -- JSON
-
-                        -- Other
-                        "bashls", -- Bash
-                    },
-                    handlers = {
-                        function(server_name)
-                            require("lspconfig")[server_name].setup({
-                                capabilities = capabilities
-                            })
-                        end,
-                    }
-                })
             end
         },
         {

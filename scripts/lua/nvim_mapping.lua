@@ -1,7 +1,7 @@
 -- ============================================================================
 --  Nvim-Lua Mapping
 -- ============================================================================
-
+-- {{{
 
 -- MapLeader
 Nvim.global.mapleader = '\\'
@@ -44,3 +44,5 @@ nrmap('<C-t>f', builtin.find_files, 'Telescope Find Files')
 nrmap('<C-t>g', builtin.live_grep, 'Telescope Live Grep')
 nrmap('<C-t>b', builtin.buffers, 'Telescope Buffers')
 nrmap('<C-t>t', builtin.help_tags, 'Telescope Help Tags')
+
+-- }}}

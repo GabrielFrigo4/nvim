@@ -1,7 +1,7 @@
 -- ============================================================================
 --  Nvim-Lua Table Variables
 -- ============================================================================
-
+-- {{{
 
 -- Nvim Table Var
 Nvim = {
@@ -12,9 +12,9 @@ Nvim = {
 
     -- nvim table variables
     var = vim.v,
-    luv = vim.uv,
+    uv = vim.uv,
     api = vim.api,
-    loop = vim.loop,
+    lsp = vim.lsp,
     global = vim.g,
     option = vim.opt,
     guioption = vim.go,
@@ -82,7 +82,7 @@ Nvim = {
     lazy = {
         setup = function()
             local lazypath = Nvim.func.stdpath("data") .. "/lazy/lazy.nvim"
-            if not (Nvim.luv or Nvim.loop).fs_stat(lazypath) then
+            if not Nvim.uv.fs_stat(lazypath) then
                 local lazyrepo = "https://github.com/folke/lazy.nvim.git"
                 local out = Nvim.func.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo,
                     lazypath })
@@ -106,3 +106,5 @@ Nvim.call.file.lua('config', false)
 
 -- Call Nvim Vim Config
 Nvim.call.file.vim('config', false)
+
+-- }}}

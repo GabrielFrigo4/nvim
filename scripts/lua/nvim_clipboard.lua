@@ -1,7 +1,7 @@
 -- ============================================================================
 --  Nvim-Lua Clipboard
 -- ============================================================================
-
+-- {{{
 
 if Nvim.isWsl then
     if Nvim.func.executable("wl-copy") == 1 and Nvim.func.executable("wl-paste") == 1 then
@@ -70,3 +70,5 @@ if Nvim.isWsl then
         error("don't find clipboard executable utils!")
     end
 end
+
+-- }}}

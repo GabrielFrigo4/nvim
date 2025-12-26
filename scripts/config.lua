@@ -1,18 +1,19 @@
 -- ============================================================================
 --  Nvim-Lua Configuration
 -- ============================================================================
-
+-- {{{
 
 -- helpers
 local function termcode(str)
     return Nvim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
+-- }}}
 
 -- ============================================================================
 --  Core & Plugins
 -- ============================================================================
-
+-- {{{
 
 -- polyglot
 Nvim.global.polyglot_disabled = { 'ftdetect', 'ada' }
@@ -35,11 +36,15 @@ Nvim.call.file.lua('nvim_autocmd', true)
 -- treesitter
 Nvim.call.file.lua('nvim_treesitter', true)
 
+-- lsp
+Nvim.call.file.lua('nvim_lsp', true)
+
+-- }}}
 
 -- ============================================================================
 --  Input & Navigation
 -- ============================================================================
-
+-- {{{
 
 -- backspace
 Nvim.keymap.set('n', '<Backspace>', function()
@@ -58,11 +63,12 @@ Nvim.option.whichwrap:append('<>hl[]')
 Nvim.option.mouse = 'a'
 Nvim.option.mousemodel = 'popup'
 
+-- }}}
 
 -- ============================================================================
 --  UI & Visuals
 -- ============================================================================
-
+-- {{{
 
 -- clipboard
 Nvim.guioption = 'adegmrLT'
@@ -89,11 +95,13 @@ Nvim.api.nvim_create_autocmd({ 'VimLeave', 'VimSuspend' }, {
 Nvim.option.relativenumber = true
 Nvim.option.inccommand = 'split'
 
+-- }}}
 
 -- ============================================================================
 --  Formatting & Text
 -- ============================================================================
 
+-- {{{
 
 -- indent
 Nvim.option.preserveindent = true
@@ -119,3 +127,5 @@ Nvim.api.nvim_create_autocmd('FileType', {
         Nvim.opt_local.foldmethod = 'marker'
     end
 })
+
+-- }}}

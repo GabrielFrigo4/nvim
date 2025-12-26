@@ -1,7 +1,7 @@
 -- ============================================================================
 --  Nvim-Treesitter
 -- ============================================================================
-
+-- {{{
 
 -- Grammars List
 local grammars = {
@@ -48,3 +48,5 @@ end
 Nvim.api.nvim_create_user_command('TreeSitterSetup', tree_sitter_install,
     { nargs = 0, desc = 'Setup TreeSitter Grammars' }
 )
+
+-- }}}

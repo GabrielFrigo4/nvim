@@ -15,6 +15,8 @@ local grammars = {
     "python", "lua", "commonlisp",
     -- Languages (WEB)
     "javascript", "typescript", "tsx", "html", "css",
+    -- Build System (MAKE)
+    "make", "cmake",
     -- GIT
     "git_config", "git_rebase", "gitattributes",
     "gitcommit", "gitignore",
@@ -24,8 +26,6 @@ local grammars = {
     "verilog", "vhdl",
     -- VIM
     "vimdoc", "vim",
-    -- Make
-    "make", "cmake",
     -- Data
     "yaml", "toml", "xml", "json",
     -- Organization

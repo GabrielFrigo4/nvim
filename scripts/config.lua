@@ -3,10 +3,8 @@
 -- ============================================================================
 -- {{{
 
--- helpers
-local function termcode(str)
-    return Nvim.api.nvim_replace_termcodes(str, true, true, true)
-end
+-- polyglot
+Nvim.global.polyglot_disabled = { 'ftdetect', 'ada' }
 
 -- }}}
 
@@ -14,9 +12,6 @@ end
 --  Core & Plugins
 -- ============================================================================
 -- {{{
-
--- polyglot
-Nvim.global.polyglot_disabled = { 'ftdetect', 'ada' }
 
 -- plug
 Nvim.call.file.lua('nvim_plug', true)

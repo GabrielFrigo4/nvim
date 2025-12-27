@@ -23,6 +23,7 @@ Nvim = {
     filesys = vim.fs,
     func = vim.fn,
     cmd = vim.cmd,
+    notify = vim.notify,
     augroup = vim.api.nvim_create_augroup,
     autocmd = vim.api.nvim_create_autocmd,
     path = {

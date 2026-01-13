@@ -74,14 +74,14 @@ Nvim.option.cursorcolumn = true
 Nvim.option.cursorline = true
 
 -- cursor style
-local cursor_grp = Nvim.api.nvim_create_augroup('ConfigCursor', { clear = true })
+local cursor_group = Nvim.api.nvim_create_augroup('ConfigCursor', { clear = true })
 Nvim.api.nvim_create_autocmd({ 'VimEnter', 'VimResume' }, {
-    group = cursor_grp,
+    group = cursor_group,
     pattern = '*',
     command = 'set guicursor=n-c:block,i-ci-ve:ver10,r-v:hor10,a:blinkwait500-blinkoff500-blinkon500-Cursor/lCursor'
 })
 Nvim.api.nvim_create_autocmd({ 'VimLeave', 'VimSuspend' }, {
-    group = cursor_grp,
+    group = cursor_group,
     pattern = '*',
     command = 'set guicursor='
 })

@@ -33,7 +33,7 @@ local grammars = {
     -- Organization (ORG)
     "markdown", "markdown_inline",
     "mermaid", "latex", "norg",
-    -- Scripting (SHE)
+    -- Scripting (SH)
     "bash",
     -- Database (DB)
     "sql"

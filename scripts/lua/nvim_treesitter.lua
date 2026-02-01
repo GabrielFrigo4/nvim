@@ -5,33 +5,38 @@
 
 -- Grammars List
 local grammars = {
+    -- Languages (MCU)
+    "arduino",
     -- Languages (ASM)
     "asm", "nasm",
-    -- Languages (BIN)
+    -- Languages (CPU)
     "c", "cpp", "zig", "rust", "go", "ada", "haskell",
     -- Languages (JIT)
-    "c_sharp", "java",
+    "c_sharp", "java", "erlang",
     -- Languages (VM)
     "python", "lua", "commonlisp",
     -- Languages (WEB)
     "javascript", "typescript", "tsx", "html", "css",
+    -- Languages (GPU)
+    "cuda", "glsl", "hlsl",
+    -- Languages (FPGA)
+    "verilog", "vhdl",
     -- Build System (MAKE)
     "make", "cmake",
-    -- GIT
+    -- Repository (GIT)
     "git_config", "git_rebase", "gitattributes",
     "gitcommit", "gitignore",
-    -- GPU
-    "cuda", "glsl", "hlsl",
-    -- CPU
-    "verilog", "vhdl",
-    -- VIM
-    "vimdoc", "vim",
-    -- Data
+    -- Serialize (DATA)
     "yaml", "toml", "xml", "json",
-    -- Organization
-    "norg", "markdown",
-    -- Other
-    "bash", "sql", "arduino"
+    -- Configuration (VIM)
+    "vimdoc", "vim",
+    -- Organization (ORG)
+    "markdown", "markdown_inline",
+    "mermaid", "latex", "norg",
+    -- Scripting (SHE)
+    "bash",
+    -- Database (DB)
+    "sql"
 }
 
 -- TSInstall Lua Function

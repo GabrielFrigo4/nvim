@@ -1,8 +1,12 @@
-# Nvim
- NeoVim config
-
+# Gabriel Frigo's NeoVm Configuration
  This repository is the configuration of the NeoVim code editor that Gabriel Frigo uses
 
+## TODO
+ Todo List (Nvim Current)
+ ```
+ Directory: Unix-Like
+ ```
+ 
 # Plug
  For install [plug](https://github.com/junegunn/vim-plug) manager package uses
 

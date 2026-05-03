@@ -3,106 +3,73 @@
 -- ============================================================================
 -- {{{
 
--- Server List
 local servers = {
-	-- Languages (ASM)
 	"asm_lsp",
-	-- Languages (BIN)
 	"clangd", "zls", "rust_analyzer", "gopls",
-	-- Languages (JIT)
 	"jdtls",
-	-- Languages (VM)
 	"pyright", "lua_ls",
-	-- Languages (WEB)
 	"ts_ls", "html", "cssls",
-	-- Build System (MAKE)
 	"neocmake",
-	-- Data
 	"yamlls", "lemminx", "jsonls",
-	-- Other
 	"bashls", "sqlls",
 }
 
 local ft_map = {
-	-- Languages (ASM)
 	asm_lsp       = { "asm", "vmasm", "nasm" },
-	-- Languages (BIN)
 	clangd        = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
 	zls           = { "zig", "zir" },
 	rust_analyzer = { "rust" },
 	gopls         = { "go", "gomod", "gowork", "gotmpl" },
-	-- Languages (JIT)
 	jdtls         = { "java" },
-	-- Languages (VM)
 	pyright       = { "python" },
 	lua_ls        = { "lua" },
-	-- Languages (WEB)
 	ts_ls         = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 	html          = { "html" },
 	cssls         = { "css", "scss", "less" },
-	-- Build System (MAKE)
 	neocmake      = { "cmake" },
-	-- Data
 	yamlls        = { "yaml" },
 	lemminx       = { "xml" },
 	jsonls        = { "json", "jsonc" },
-	-- Other
 	bashls        = { "sh", "bash" },
 	sqlls         = { "sql", "mysql" },
 }
 
 local mason_map = {
-	-- Languages (ASM)
 	["asm_lsp"]       = "asm-lsp",
-	-- Languages (BIN)
 	["clangd"]        = "clangd",
 	["zls"]           = "zls",
 	["rust_analyzer"] = "rust-analyzer",
 	["gopls"]         = "gopls",
-	-- Languages (JIT)
 	["jdtls"]         = "jdtls",
-	-- Languages (VM)
 	["pyright"]       = "pyright",
 	["lua_ls"]        = "lua-language-server",
-	-- Languages (WEB)
 	["ts_ls"]         = "typescript-language-server",
 	["html"]          = "html-lsp",
 	["cssls"]         = "css-lsp",
-	-- Build System (MAKE)
 	["neocmake"]      = "neocmakelsp",
-	-- Data
 	["yamlls"]        = "yaml-language-server",
 	["lemminx"]       = "lemminx",
 	["jsonls"]        = "json-lsp",
-	-- Other
 	["bashls"]        = "bash-language-server",
 	["sqlls"]         = "sqlls",
 }
 
 local binary_map = {
-	-- Languages (ASM)
 	["asm_lsp"]       = "asm-lsp",
-	-- Languages (BIN)
 	["clangd"]        = "clangd",
 	["zls"]           = "zls",
 	["rust_analyzer"] = "rust-analyzer",
 	["gopls"]         = "gopls",
-	-- Languages (JIT)
 	["jdtls"]         = "jdtls",
-	-- Languages (VM)
 	["pyright"]       = "pyright-langserver",
 	["lua_ls"]        = "lua-language-server",
-	-- Languages (WEB)
 	["ts_ls"]         = "typescript-language-server",
 	["html"]          = "vscode-html-language-server",
 	["cssls"]         = "vscode-css-language-server",
-	-- Build System (MAKE)
 	["neocmake"]      = "neocmakelsp",
-	-- Data
 	["yamlls"]        = "yaml-language-server",
 	["lemminx"]       = "lemminx",
 	["jsonls"]        = "vscode-json-language-server",
-	-- Other
 	["bashls"]        = "bash-language-server",
 	["sqlls"]         = "sql-language-server",
 }

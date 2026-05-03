@@ -7,15 +7,15 @@ Nvim.global.mapleader = '\\'
 Nvim.global.maplocalleader = Nvim.global.mapleader
 
 Nvim.keymap.set('n', '<Backspace>', function()
-    if Nvim.func.col('.') == 1 then
-        return 'kgJ'
-    else
-        return 'X'
-    end
+	if Nvim.func.col('.') == 1 then
+		return 'kgJ'
+	else
+		return 'X'
+	end
 end, { expr = true, replace_keycodes = true, desc = "Smart Backspace" })
 
 local function nrmap(shortcut, command, description)
-    Nvim.keymap.set('', shortcut, command, { desc = description, noremap = true, silent = true })
+	Nvim.keymap.set('', shortcut, command, { desc = description, noremap = true, silent = true })
 end
 
 nrmap('<M-.>', '<C-]>')

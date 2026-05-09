@@ -170,6 +170,7 @@ lazy.setup({
 					java = { "clang_format" },
 					cs = { "clang_format" },
 					cuda = { "clang_format" },
+					lua = { "stylua" },
 				},
 				format_on_save = {
 					timeout_ms = 500,

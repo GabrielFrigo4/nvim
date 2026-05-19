@@ -171,6 +171,7 @@ lazy.setup({
 					cs = { "clang_format" },
 					cuda = { "clang_format" },
 					lua = { "stylua" },
+					go = { "gofmt", "goimports" },
 				},
 				format_on_save = {
 					timeout_ms = 500,

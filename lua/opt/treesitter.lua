@@ -23,9 +23,10 @@ local grammars = {
 	"sql"
 }
 
-local ts_install = require('nvim-treesitter.install').commands.TSInstall['run!']
-
 local function tree_sitter_install()
+	require('nvim-treesitter.install').compilers = { "gcc", "clang", "cc" }
+	
+	local ts_install = require('nvim-treesitter.install').commands.TSInstall['run!']
 	for _, grammar in ipairs(grammars) do
 		ts_install(grammar)
 	end

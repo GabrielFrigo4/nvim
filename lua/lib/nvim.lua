@@ -3,10 +3,17 @@
 -- ============================================================================
 -- {{{
 
+local uname = vim.uv.os_uname()
+local sysname = uname.sysname:lower()
+
 Nvim = {
 	isWin = vim.fn.has('win32') == 1,
 	isUnix = vim.fn.has('unix') == 1,
 	isWsl = vim.fn.has('wsl') == 1,
+	isMac = sysname == 'darwin',
+	isLinux = sysname == 'linux',
+	isBSD = sysname:find('bsd') ~= nil,
+	sysname = sysname,
 
 	var = vim.v,
 	uv = vim.uv,

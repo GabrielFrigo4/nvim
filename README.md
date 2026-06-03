@@ -15,7 +15,7 @@ This configuration adopts a Unix-like Filesystem Hierarchy Standard (FHS) to kee
 
 ## 📋 TODO
 
-*Keep track of future ideas and improvements here:*
+_Keep track of future ideas and improvements here:_
 
 ---
 
@@ -24,51 +24,77 @@ This configuration adopts a Unix-like Filesystem Hierarchy Standard (FHS) to kee
 Instructions to install the supported plugin managers.
 
 ### [vim-plug](https://github.com/junegunn/vim-plug)
-**ZSH (Unix):**
-```zsh
+
+**Unix (Linux / FreeBSD) / Windows (MSYS2):**
+
+```sh
 sh -c 'curl -fLo "${XDG_DATA_HOME:-${HOME}/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-**PWSH (Windows):**
+**Windows (PowerShell):**
+
 ```pwsh
 iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
     ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
 ```
 
 ### [rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim)
-**UNIX:**
-```zsh
+
+**Unix (Linux / FreeBSD) / Windows (MSYS2):**
+
+```sh
 nvim -u NORC -c "source https://raw.githubusercontent.com/nvim-neorocks/rocks.nvim/master/installer.lua"
 ```
 
-**WIN ([Lua Tools in Scoop](https://github.com/nvim-neorocks/rocks-scoop)):**
+**Windows ([Lua Tools in Scoop](https://github.com/nvim-neorocks/rocks-scoop)):**
+
 ```pwsh
 luarocks --lua-version=5.1 --tree "C:\Users\gabri\AppData\Local\nvim-data\rocks" --server='https://nvim-neorocks.github.io/rocks-binaries/' install rocks.nvim
 ```
 
 ### [lazy.nvim](https://github.com/folke/lazy.nvim)
+
 Lazy is installed and configured automatically via the `lua/opt/lazy.lua` setup.
 
 ---
 
 ## 📋 Clipboard Dependencies
 
-To enable system clipboard integration, install one of the following depending on your OS and display server:
+To enable system clipboard integration, install one of the following depending on your OS and display server.
 
-- **[wl-clipboard](https://github.com/bugaevc/wl-clipboard)** (Wayland):
-  ```zsh
-  yay -S wl-clipboard
-  ```
-- **[xclip](https://github.com/astrand/xclip)** (X11):
-  ```zsh
-  yay -S xclip
-  ```
-- **[xsel](https://github.com/kfish/xsel)** (X11 Alternative):
-  ```zsh
-  yay -S xsel
-  ```
-- **[win32yank](https://github.com/equalsraf/win32yank)** (Windows):
-  ```pwsh
-  winget install equalsraf.win32yank
-  ```
+### Unix
+
+#### Wayland
+
+- **[wl-clipboard](https://github.com/bugaevc/wl-clipboard)**:
+    - **Linux:** `yay -S wl-clipboard`
+    - **FreeBSD:** `pkg install wl-clipboard`
+
+#### X11
+
+- **[xclip](https://github.com/astrand/xclip)**:
+    - **Linux:** `yay -S xclip`
+    - **FreeBSD:** `pkg install xclip`
+- **[xsel](https://github.com/kfish/xsel)** (Alternative):
+    - **Linux:** `yay -S xsel`
+    - **FreeBSD:** `pkg install xsel`
+
+### Windows
+
+- **[win32yank](https://github.com/equalsraf/win32yank)**:
+    - **Winget:** `winget install equalsraf.win32yank`
+
+---
+
+## 🖥️ Platform Notes
+
+### FreeBSD
+
+- **Mason.nvim**: Pre-compiled binaries may not be available. Install LSP servers via `pkg` or `ports`:
+    ```sh
+    pkg install lua-language-server
+    pkg install llvm
+    ```
+    The `:LSPLoad` command detects system-installed servers automatically.
+- **Treesitter**: Requires a C compiler. FreeBSD includes `cc` (Clang) by default.

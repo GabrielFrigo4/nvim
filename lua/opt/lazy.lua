@@ -14,6 +14,7 @@ lazy.setup({
 		-- {{{
 		{
 			"rebelot/kanagawa.nvim",
+			version = "*",
 			lazy = false,
 			priority = 1000,
 			config = function()
@@ -22,6 +23,7 @@ lazy.setup({
 		},
 		{
 			'nvim-lualine/lualine.nvim',
+			version = "*",
 			dependencies = { 'nvim-tree/nvim-web-devicons' },
 			config = function()
 				require('lualine').setup({
@@ -31,6 +33,7 @@ lazy.setup({
 		},
 		{
 			"lukas-reineke/indent-blankline.nvim",
+			version = "*",
 			main = "ibl",
 			opts = {},
 		},
@@ -71,6 +74,7 @@ lazy.setup({
 		-- {{{
 		{
 			"nvim-tree/nvim-tree.lua",
+			version = "*",
 			dependencies = { "nvim-tree/nvim-web-devicons" },
 			lazy = false,
 			opts = {
@@ -88,6 +92,7 @@ lazy.setup({
 		},
 		{
 			"stevearc/oil.nvim",
+			version = "*",
 			dependencies = { "echasnovski/mini.icons" },
 			lazy = false,
 			opts = {},
@@ -100,6 +105,7 @@ lazy.setup({
 		-- {{{
 		{
 			'nvim-telescope/telescope.nvim',
+			version = "*",
 			dependencies = { 'nvim-lua/plenary.nvim' },
 			lazy = false,
 			config = function()
@@ -116,11 +122,13 @@ lazy.setup({
 		},
 		{
 			'windwp/nvim-autopairs',
+			version = "*",
 			event = "InsertEnter",
 			config = true
 		},
 		{
 			"NeogitOrg/neogit",
+			version = "*",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"sindrets/diffview.nvim",
@@ -142,6 +150,7 @@ lazy.setup({
 		},
 		{
 			"stevearc/conform.nvim",
+			version = "*",
 			event = { "BufWritePre" },
 			cmd = { "ConformInfo" },
 			keys = {
@@ -187,6 +196,7 @@ lazy.setup({
 		-- {{{
 		{
 			"neovim/nvim-lspconfig",
+			version = "*",
 			dependencies = {
 				"williamboman/mason.nvim",
 				"williamboman/mason-lspconfig.nvim",
@@ -198,6 +208,7 @@ lazy.setup({
 		},
 		{
 			'hrsh7th/nvim-cmp',
+			version = "*",
 			dependencies = {
 				'hrsh7th/cmp-nvim-lsp',
 				'hrsh7th/cmp-buffer',
@@ -250,7 +261,8 @@ lazy.setup({
 	-- ============================================================================
 	-- {{{
 	install = { colorscheme = { "kanagawa-wave" } },
-	checker = { enabled = true },
+	checker = { enabled = true, notify = false },
+	change_detection = { notify = false },
 	performance = {
 		rtp = {
 			disabled_plugins = {

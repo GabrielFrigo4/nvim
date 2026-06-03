@@ -69,6 +69,59 @@ if Nvim.isWsl then
 	else
 		error("don't find clipboard executable utils!")
 	end
+elseif Nvim.isUnix then
+	if Nvim.func.executable("wl-copy") == 1 and Nvim.func.executable("wl-paste") == 1 then
+		Nvim.global.clipboard = {
+			name = "wl-clipboard",
+			copy = {
+				["+"] = 'wl-copy --foreground --type text/plain',
+				["*"] = 'wl-copy --foreground --type text/plain',
+			},
+			paste = {
+				["+"] = (function()
+					return Nvim.func.systemlist('wl-paste --no-newline', { '' }, 1)
+				end),
+				["*"] = (function()
+					return Nvim.func.systemlist('wl-paste --no-newline', { '' }, 1)
+				end),
+			},
+			cache_enabled = true,
+		}
+	elseif Nvim.func.executable("xclip") == 1 then
+		Nvim.global.clipboard = {
+			name = "xclip",
+			copy = {
+				["+"] = 'xclip -i -selection clipboard',
+				["*"] = 'xclip -i -selection clipboard',
+			},
+			paste = {
+				["+"] = (function()
+					return Nvim.func.systemlist('xclip -o -selection clipboard', { '' }, 1)
+				end),
+				["*"] = (function()
+					return Nvim.func.systemlist('xclip -o -selection clipboard', { '' }, 1)
+				end),
+			},
+			cache_enabled = true,
+		}
+	elseif Nvim.func.executable("xsel") == 1 then
+		Nvim.global.clipboard = {
+			name = "xsel",
+			copy = {
+				["+"] = 'xsel --clipboard --input',
+				["*"] = 'xsel --clipboard --input',
+			},
+			paste = {
+				["+"] = (function()
+					return Nvim.func.systemlist('xsel --clipboard --output', { '' }, 1)
+				end),
+				["*"] = (function()
+					return Nvim.func.systemlist('xsel --clipboard --output', { '' }, 1)
+				end),
+			},
+			cache_enabled = true,
+		}
+	end
 end
 
 -- }}}

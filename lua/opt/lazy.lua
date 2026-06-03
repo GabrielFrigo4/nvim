@@ -263,6 +263,7 @@ lazy.setup({
 	install = { colorscheme = { "kanagawa-wave" } },
 	checker = { enabled = true, notify = false },
 	change_detection = { notify = false },
+	rocks = { enabled = false },
 	performance = {
 		rtp = {
 			disabled_plugins = {

@@ -25,6 +25,8 @@ local grammars = {
 
 local function tree_sitter_install()
 	require('nvim-treesitter.install').compilers = { "gcc", "clang", "cc" }
+	require('nvim-treesitter.install').prefer_git = false
+	require('nvim-treesitter.install').ts_generate_args = { "generate" }
 	
 	local ts_install = require('nvim-treesitter.install').commands.TSInstall['run!']
 	for _, grammar in ipairs(grammars) do

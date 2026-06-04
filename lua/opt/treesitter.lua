@@ -7,7 +7,7 @@ local grammars = {
 	"arduino",
 	"asm", "nasm",
 	"c", "cpp", "zig", "rust", "go", "ada", "haskell",
-	"c_sharp", "java", "erlang",
+	"c_sharp", "java", "scala", "clojure", "erlang",
 	"python", "lua", "commonlisp",
 	"javascript", "typescript", "tsx", "html", "css",
 	"cuda", "glsl", "hlsl",

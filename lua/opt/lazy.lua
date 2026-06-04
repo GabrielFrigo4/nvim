@@ -167,6 +167,8 @@ lazy.setup({
 					cpp = { "clang_format" },
 					java = { "clang_format" },
 					cs = { "clang_format" },
+					scala = { "scalafmt" },
+					clojure = { "cljfmt" },
 					cuda = { "clang_format" },
 					lua = { "stylua" },
 					go = { "gofmt", "goimports" },

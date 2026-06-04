@@ -97,4 +97,10 @@ To enable system clipboard integration, install one of the following depending o
     pkg install llvm
     ```
     The `:LSPLoad` command detects system-installed servers automatically.
-- **Treesitter**: Requires a C compiler. FreeBSD includes `cc` (Clang) by default.
+- **Treesitter**: Requires a C compiler and `tree-sitter-cli` (≥ 0.26). FreeBSD includes `cc` (Clang) by default:
+    ```sh
+    sudo pkg install --yes tree-sitter
+    sudo pkg install --yes tree-sitter-cli
+    sudo pkg install --yes tree-sitter-grammars
+    sudo pkg install --yes tree-sitter-graph
+    ```

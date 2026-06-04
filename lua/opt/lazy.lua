@@ -46,18 +46,7 @@ lazy.setup({
 		{
 			"nvim-treesitter/nvim-treesitter",
 			lazy = false,
-			version = false,
 			build = ":TSUpdate",
-			opts = {
-				highlight    = { enable = true },
-				indent       = { enable = true },
-				matchup      = { enable = true },
-				auto_install = false,
-				sync_install = false,
-			},
-			config = function(_, opts)
-				require("nvim-treesitter.configs").setup(opts)
-			end,
 		},
 		{
 			"sheerun/vim-polyglot",

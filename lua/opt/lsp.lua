@@ -122,6 +122,10 @@ local server_configs = {
 			end,
 		},
 	},
+
+	pyright = {
+		cmd = { "pyright-langserver", "--stdio" },
+	},
 }
 
 -- }}}

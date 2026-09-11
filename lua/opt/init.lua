@@ -1,7 +1,6 @@
--- ============================================================================
---  Nvim-Lua Packages
--- ============================================================================
--- {{{
+-- ----------------------------------------------------------------
+-- Module: NeoVim Packages Loader
+-- ----------------------------------------------------------------
 
 local path = vim.fn.stdpath('config') .. '/lua/opt'
 
@@ -29,5 +28,3 @@ for _, name in ipairs(files) do
 		vim.notify('Failed to load opt.' .. module_name .. ': ' .. tostring(err), vim.log.levels.WARN)
 	end
 end
-
--- }}}

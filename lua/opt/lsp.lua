@@ -1,7 +1,6 @@
--- ============================================================================
---  Nvim-LSP
--- ============================================================================
--- {{{
+-- ----------------------------------------------------------------
+-- Module: NeoVim Language Server Protocol Integration
+-- ----------------------------------------------------------------
 
 local servers = {
 	"asm_lsp",
@@ -83,13 +82,9 @@ local binary_map = {
 local has_cmp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
 local default_caps = has_cmp and cmp_lsp.default_capabilities() or vim.lsp.protocol.make_client_capabilities()
 
--- }}}
-
--- ============================================================================
---  Custom Configurations
--- ============================================================================
--- {{{
-
+-- ================================
+-- CONFIGURACOES CUSTOMIZADAS
+-- ================================
 local server_configs = {
 	clangd = {
 		cmd = { "clangd", "--background-index", "--clang-tidy" },
@@ -129,13 +124,9 @@ local server_configs = {
 	},
 }
 
--- }}}
-
--- ============================================================================
---  Functions
--- ============================================================================
--- {{{
-
+-- ================================
+-- FUNCOES AUXILIARES
+-- ================================
 local function get_mason_name(name)
 	return mason_map[name] or name
 end
@@ -194,13 +185,9 @@ local function register_autocmd(opts)
 	end
 end
 
--- }}}
-
--- ============================================================================
---  LSP Install
--- ============================================================================
--- {{{
-
+-- ================================
+-- INSTALACAO DE SERVIDORES
+-- ================================
 local function install_servers()
 	local ok_reg, registry = pcall(require, "mason-registry")
 	if not ok_reg then
@@ -230,13 +217,9 @@ Nvim.api.nvim_create_user_command('LSPInstall', install_servers,
 	{ nargs = 0, desc = 'LSP Install' }
 )
 
--- }}}
-
--- ============================================================================
---  LSP Setup
--- ============================================================================
--- {{{
-
+-- ================================
+-- INICIALIZACAO DE SERVIDORES
+-- ================================
 local function setup_servers()
 	pcall(require("mason").setup)
 
@@ -255,5 +238,3 @@ setup_servers()
 Nvim.api.nvim_create_user_command('LSPLoad', setup_servers,
 	{ nargs = 0, desc = 'LSP Load and Reload' }
 )
-
--- }}}

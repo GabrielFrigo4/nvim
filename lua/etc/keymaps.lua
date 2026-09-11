@@ -1,7 +1,6 @@
--- ============================================================================
---  Nvim-Lua Mapping
--- ============================================================================
--- {{{
+-- ----------------------------------------------------------------
+-- Module: NeoVim Keymaps & Mappings
+-- ----------------------------------------------------------------
 
 Nvim.global.mapleader = '\\'
 Nvim.global.maplocalleader = Nvim.global.mapleader
@@ -43,5 +42,3 @@ nrmap('<C-t>f', '<cmd>Telescope find_files<cr>', 'Telescope Find Files')
 nrmap('<C-t>g', '<cmd>Telescope live_grep<cr>', 'Telescope Live Grep')
 nrmap('<C-t>b', '<cmd>Telescope buffers<cr>', 'Telescope Buffers')
 nrmap('<C-t>t', '<cmd>Telescope help_tags<cr>', 'Telescope Help Tags')
-
--- }}}

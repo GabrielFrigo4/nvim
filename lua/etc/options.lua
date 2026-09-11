@@ -1,7 +1,6 @@
--- ============================================================================
---  Nvim-Lua Options
--- ============================================================================
--- {{{
+-- ----------------------------------------------------------------
+-- Module: NeoVim Core Options
+-- ----------------------------------------------------------------
 
 Nvim.option.compatible = false
 Nvim.cmd('filetype plugin indent on')
@@ -40,5 +39,3 @@ Nvim.option.tabstop = 4
 Nvim.option.smartcase = true
 Nvim.option.encoding = 'UTF-8'
 Nvim.option.termguicolors = true
-
--- }}}

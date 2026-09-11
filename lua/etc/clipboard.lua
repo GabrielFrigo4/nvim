@@ -1,7 +1,6 @@
--- ============================================================================
---  Nvim-Lua Clipboard
--- ============================================================================
--- {{{
+-- ----------------------------------------------------------------
+-- Module: NeoVim Clipboard Integration
+-- ----------------------------------------------------------------
 
 if Nvim.isWsl then
 	if Nvim.func.executable("wl-copy") == 1 and Nvim.func.executable("wl-paste") == 1 then
@@ -85,7 +84,7 @@ elseif Nvim.isUnix then
 					return Nvim.func.systemlist('wl-paste --no-newline', { '' }, 1)
 				end),
 			},
-			cache_enabled = true,
+			cache_enabled = true
 		}
 	elseif Nvim.func.executable("xclip") == 1 then
 		Nvim.global.clipboard = {
@@ -102,7 +101,7 @@ elseif Nvim.isUnix then
 					return Nvim.func.systemlist('xclip -o -selection clipboard', { '' }, 1)
 				end),
 			},
-			cache_enabled = true,
+			cache_enabled = true
 		}
 	elseif Nvim.func.executable("xsel") == 1 then
 		Nvim.global.clipboard = {
@@ -119,9 +118,7 @@ elseif Nvim.isUnix then
 					return Nvim.func.systemlist('xsel --clipboard --output', { '' }, 1)
 				end),
 			},
-			cache_enabled = true,
+			cache_enabled = true
 		}
 	end
 end
-
--- }}}

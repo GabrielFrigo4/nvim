@@ -18,7 +18,10 @@ lazy.setup({
 			lazy = false,
 			priority = 1000,
 			config = function()
-				Nvim.cmd.colorscheme("kanagawa-wave")
+				local ok = pcall(Nvim.cmd.colorscheme, "kanagawa-wave")
+				if not ok then
+					pcall(Nvim.cmd.colorscheme, "habamax")
+				end
 			end,
 		},
 		{

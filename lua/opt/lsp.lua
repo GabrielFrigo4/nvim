@@ -80,7 +80,8 @@ local binary_map = {
 	["sqlls"]         = "sql-language-server",
 }
 
-local default_caps = require('cmp_nvim_lsp').default_capabilities()
+local has_cmp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
+local default_caps = has_cmp and cmp_lsp.default_capabilities() or vim.lsp.protocol.make_client_capabilities()
 
 -- }}}
 
@@ -149,7 +150,8 @@ local function is_system_available(name)
 end
 
 local function is_mason_available(name)
-	local registry = require("mason-registry")
+	local ok_reg, registry = pcall(require, "mason-registry")
+	if not ok_reg then return false end
 	local mason_name = get_mason_name(name)
 	local ok, pkg = pcall(registry.get_package, mason_name)
 	return ok and pkg and pkg:is_installed()
@@ -200,7 +202,11 @@ end
 -- {{{
 
 local function install_servers()
-	local registry = require("mason-registry")
+	local ok_reg, registry = pcall(require, "mason-registry")
+	if not ok_reg then
+		print("Mason registry is not available yet. Run :Lazy to install plugins first.")
+		return
+	end
 	print("LSP Install Start...")
 
 	for _, name in ipairs(servers) do

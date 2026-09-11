@@ -24,7 +24,10 @@ end
 
 for _, name in ipairs(files) do
 	local module_name = name:gsub('%.lua$', '')
-	require('opt.' .. module_name)
+	local ok, err = pcall(require, 'opt.' .. module_name)
+	if not ok then
+		vim.notify('Failed to load opt.' .. module_name .. ': ' .. tostring(err), vim.log.levels.WARN)
+	end
 end
 
 -- }}}

@@ -1,106 +1,54 @@
-<div align="center">
-  <h1>🌟 Gabriel Frigo's Neovim</h1>
-  <p><i>A highly customized, Unix-like structured Neovim setup.</i></p>
-</div>
+# ⚡ NeoVim Configuration
+
+> Configuração modular, declarativa e resiliente do NeoVim com arquitetura FHS em Lua, Lazy.nvim, Mason LSP e tema Kanagawa.
+
+[![Environment](https://img.shields.io/badge/🏛️_Environment-Hub-blue)](https://github.com/GabrielFrigo4/environment)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Lua](https://img.shields.io/badge/lua-5.1%20%2F%20luajit-blue)](init.lua)
 
 ---
 
-## 📁 Directory Structure (Unix-like FHS)
+## 🧭 Visão Geral
 
-This configuration adopts a Unix-like Filesystem Hierarchy Standard (FHS) to keep the `lua/` directory clean and highly organized:
+Este repositório contém a configuração oficial do **NeoVim** de Gabriel Frigo, integrando a **Suíte de Editores** do [Universal Environment](https://github.com/GabrielFrigo4/environment). A estrutura adota a convenção de hierarquia UNIX FHS (`etc/`, `lib/`, `opt/`) para clareza e manutenção desacoplada.
 
-- **`lua/etc/`**: Core configurations (`options.lua`, `keymaps.lua`, `autocmds.lua`, `clipboard.lua`).
-- **`lua/lib/`**: Custom library and utility functions (`nvim.lua`).
-- **`lua/opt/`**: Plugin managers and their setups (`lazy.lua`, `lsp.lua`, `treesitter.lua`, `plug.lua`).
-
-## 📋 TODO
-
-_Keep track of future ideas and improvements here:_
+- **Modularidade & Resiliência:** Carregamento protegido com `pcall` em `lua/opt/init.lua` para garantir inicialização sem falhas.
+- **Ecossistema Lazy.nvim:** Instalação e gestão declarativa e assíncrona de plugins.
+- **Mason LSP:** Gestão e autoconfiguração de Language Servers com fallback de capabilities.
+- **Tema Kanagawa:** Visual relaxante e tema com fallback silencioso para `habamax` / `default`.
 
 ---
 
-## 📦 Plugin Managers
+## 📁 Catálogo da Estrutura
 
-Instructions to install the supported plugin managers.
+| Diretório / Arquivo                | Descrição                                                                       |
+| :--------------------------------- | :------------------------------------------------------------------------------ |
+| [`init.lua`](init.lua)             | Ponto de entrada que carrega em ordem `lib`, `etc` e `opt`                      |
+| [`lua/etc/`](lua/etc/)             | Opções do editor (`options.lua`), atalhos (`keymaps.lua`), autocmds e clipboard |
+| [`lua/lib/`](lua/lib/)             | Bibliotecas auxiliares e utilitários (`nvim.lua`)                               |
+| [`lua/opt/`](lua/opt/)             | Plugins: `lazy.lua`, `lsp.lua` (Mason), `treesitter.lua`, `plug.lua`            |
+| [`AGENTS.md`](AGENTS.md)           | Briefing arquitetural para agentes de inteligência artificial                   |
+| [`PRINCIPLES.md`](PRINCIPLES.md)   | Os 18 Princípios de Engenharia UNIX + Clean Code                                |
+| [`ENVIRONMENT.md`](ENVIRONMENT.md) | Manifesto do ecossistema Universal Environment                                  |
 
-### [vim-plug](https://github.com/junegunn/vim-plug)
+---
 
-**Unix (Linux / FreeBSD) / Windows (MSYS2):**
+## 🚀 Instalação e Uso Rápido
+
+### 1. Vincular via Profile
 
 ```sh
-sh -c 'curl -fLo "${XDG_DATA_HOME:-${HOME}/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# Sincronização automática via Universal Environment
+make sync
+
+# Ou criação manual de links
+mkdir -p "${HOME}/.config/nvim"
+ln -sf "$(pwd)/init.lua" "${HOME}/.config/nvim/init.lua"
+ln -sf "$(pwd)/lua" "${HOME}/.config/nvim/lua"
 ```
 
-**Windows (PowerShell):**
-
-```pwsh
-iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
-    ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
-```
-
-### [rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim)
-
-**Unix (Linux / FreeBSD) / Windows (MSYS2):**
+### 2. Validação Headless
 
 ```sh
-nvim -u NORC -c "source https://raw.githubusercontent.com/nvim-neorocks/rocks.nvim/master/installer.lua"
+nvim --headless -c "quit"
 ```
-
-**Windows ([Lua Tools in Scoop](https://github.com/nvim-neorocks/rocks-scoop)):**
-
-```pwsh
-luarocks --lua-version=5.1 --tree "C:\Users\gabri\AppData\Local\nvim-data\rocks" --server='https://nvim-neorocks.github.io/rocks-binaries/' install rocks.nvim
-```
-
-### [lazy.nvim](https://github.com/folke/lazy.nvim)
-
-Lazy is installed and configured automatically via the `lua/opt/lazy.lua` setup.
-
----
-
-## 📋 Clipboard Dependencies
-
-To enable system clipboard integration, install one of the following depending on your OS and display server.
-
-### Unix
-
-#### Wayland
-
-- **[wl-clipboard](https://github.com/bugaevc/wl-clipboard)**:
-    - **Linux:** `yay -S wl-clipboard`
-    - **FreeBSD:** `pkg install wl-clipboard`
-
-#### X11
-
-- **[xclip](https://github.com/astrand/xclip)**:
-    - **Linux:** `yay -S xclip`
-    - **FreeBSD:** `pkg install xclip`
-- **[xsel](https://github.com/kfish/xsel)** (Alternative):
-    - **Linux:** `yay -S xsel`
-    - **FreeBSD:** `pkg install xsel`
-
-### Windows
-
-- **[win32yank](https://github.com/equalsraf/win32yank)**:
-    - **Winget:** `winget install equalsraf.win32yank`
-
----
-
-## 🖥️ Platform Notes
-
-### FreeBSD
-
-- **Mason.nvim**: Pre-compiled binaries may not be available. Install LSP servers via `pkg` or `ports`:
-    ```sh
-    pkg install lua-language-server
-    pkg install llvm
-    ```
-    The `:LSPLoad` command detects system-installed servers automatically.
-- **Treesitter**: Requires a C compiler and `tree-sitter-cli` (≥ 0.26). FreeBSD includes `cc` (Clang) by default:
-    ```sh
-    sudo pkg install --yes tree-sitter
-    sudo pkg install --yes tree-sitter-cli
-    sudo pkg install --yes tree-sitter-grammars
-    sudo pkg install --yes tree-sitter-graph
-    ```
